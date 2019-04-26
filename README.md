@@ -1,3 +1,5 @@
+Command line instructions
+
 Git global setup
 git config --global user.name "xiaochen.shi"
 git config --global user.email "xiaochen.shi@advantech.com.cn"
