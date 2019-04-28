@@ -8,6 +8,6 @@
 > **[New Features]**
 > 1. First Version Control
 
-> **[Bug Fixed]**
+> **[Bugs Fixed]**
 > 1. Support the device status manual refresh
 
