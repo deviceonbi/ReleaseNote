@@ -1,27 +1,37 @@
-Command line instructions
+# WISE.M+ Release Note
 
-Git global setup
-git config --global user.name "xiaochen.shi"
-git config --global user.email "xiaochen.shi@advantech.com.cn"
+{+ Version-Control +}
 
-Create a new repository
-git clone git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-cd WISEMPlusLog
-touch README.md
-git add README.md
-git commit -m "add README"
-git push -u origin master
+---
 
-Existing folder
-cd existing_folder
-git init
-git remote add origin git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-git add .
-git commit
-git push -u origin master
+## **0.50.004 Build002 (2019-4-29)**
+> **[New Features]**
+> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
 
-Existing Git repository
-cd existing_repo
-git remote add origin git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-git push -u origin --all
-git push -u origin --tags
+> **[Fixes]**
+> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
+
+## **0.50.004 Build001 (2019-4-28)**
+> **[New Features]**
+> 1. First Version Control
+
+> **[Fixes]**
+> 1. Support the device status manual refresh
+
+## **0.50.002 Build001 (2019-4-xx)**
+> **[Space List]**
+
+> | Server   |org     |   space|    Description |
+> |--------  |--------|--------|----------------|
+> |HK        |AdvIIoT-EnE |DeviceMPlus |For RD Develop|
+> |HK        |AdvIIoT-EnE |EnergyPlus |For Dalian JiuPeng Develop|
+> |HK        |AdvIIoT-EnE |SRPDemo |For PM/PSM Demo|
+> |HK        |AdvIIoT-EnE |ZhiPin |For Fuzhou ZhiPin test WISE.M+|
+> |PeKing    |AdvIIoT-EnE |WISEMPlus |For RD Develop/Test/Demo in ACN|
+> |HK    |AdvIIoT-SAE |TrainingMplus |For FAE/AE Demo/Training|
