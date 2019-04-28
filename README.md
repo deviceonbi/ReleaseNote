@@ -11,3 +11,11 @@
 > **[Bugs Fixed]**
 > 1. Support the device status manual refresh
 
+## **2019-4-xx [0.50.002]**
+> **[Space List]**
+> |    org |   space|    URL |
+> |--------|--------|--------|
+> |HK      |--------|--------|
+> |PeKing  |--------|--------|
+
+
