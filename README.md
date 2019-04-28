@@ -4,6 +4,19 @@
 
 ---
 
+## **2019-4-29 [0.50.004][Build002]**
+> **[New Features]**
+> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
+
+> **[Bugs Fixed]**
+> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
+> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
+
 ## **2019-4-28 [0.50.004]**
 > **[New Features]**
 > 1. First Version Control
