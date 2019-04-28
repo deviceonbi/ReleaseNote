@@ -4,7 +4,7 @@
 
 ---
 
-## **0.50.004 [Build002] (2019-4-29)**
+## **0.50.004 Build002 (2019-4-29)**
 > **[New Features]**
 > 1. xxxxxxxxxxxxxxxxxxxxxxxxx
 > 2. xxxxxxxxxxxxxxxxxxxxxxxxx
@@ -17,14 +17,14 @@
 > 3. xxxxxxxxxxxxxxxxxxxxxxxxx
 > 4. xxxxxxxxxxxxxxxxxxxxxxxxx
 
-## **0.50.004 [Build001] (2019-4-28)**
+## **0.50.004 Build001 (2019-4-28)**
 > **[New Features]**
 > 1. First Version Control
 
 > **[Fixes]**
 > 1. Support the device status manual refresh
 
-## **0.50.002 [Build001] (2019-4-xx)**
+## **0.50.002 Build001 (2019-4-xx)**
 > **[Space List]**
 
 > | Server   |org     |   space|    Description |
