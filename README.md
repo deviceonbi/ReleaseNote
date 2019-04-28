@@ -5,8 +5,8 @@
 ---
 
 ## **2019-4-28 [0.50.004]**
-> ### [New Features]
+> **[New Features]**
 > 1. First Version Control
-> ### [Bug Fixed]
+> **[Bug Fixed]**
 > 1. Support the device status manual refresh
 
