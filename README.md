@@ -14,10 +14,14 @@
 ## **2019-4-xx [0.50.002]**
 > **[Space List]**
 
-> |    org |   space|    URL |
-> |--------|--------|--------|
-> |HK      |--------|--------|
-> |PeKing  |--------|--------|
+> | Server   |org     |   space|    Description |
+> |--------  |--------|--------|----------------|
+> |HK        |AdvIIoT-EnE |DeviceMPlus |For RD Develop|
+> |HK        |AdvIIoT-EnE |EnergyPlus |For RD Develop|
+> |HK        |AdvIIoT-EnE |SRPDemo |For RD Develop|
+> |HK        |AdvIIoT-EnE |ZhiPin |For RD Develop|
+> |--------  |--------|--------|----------------|
+> |PeKing    |AdvIIoT-EnE |WISEMPlus |For RD Develop/Test/Demo in ACN|
 
 
 
