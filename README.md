@@ -1,27 +1,12 @@
-Command line instructions
+# WISE.M+ Release Note
 
-Git global setup
-git config --global user.name "xiaochen.shi"
-git config --global user.email "xiaochen.shi@advantech.com.cn"
+Tags ： Version-Control
 
-Create a new repository
-git clone git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-cd WISEMPlusLog
-touch README.md
-git add README.md
-git commit -m "add README"
-git push -u origin master
+---
 
-Existing folder
-cd existing_folder
-git init
-git remote add origin git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-git add .
-git commit
-git push -u origin master
+## **2019-4-28 [0.50.004]**
+> ### [New Features]
+> 1. First Version Control
+> ### [Bug Fixed]
+> 1. Support the device status manual refresh
 
-Existing Git repository
-cd existing_repo
-git remote add origin git@advgitlab.eastasia.cloudapp.azure.com:deviceon/WISEMPlusLog.git
-git push -u origin --all
-git push -u origin --tags
