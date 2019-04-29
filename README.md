@@ -1,6 +1,6 @@
 # WISE.M+ Release Note
 
-tags : Version-Control;
+Tags: Version-Control;
 
 ---
 
