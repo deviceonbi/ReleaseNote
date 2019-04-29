@@ -3,10 +3,22 @@
 
 ## **0.50.004 Build002 (2019-4-29)**
 > **[New Features]**
-> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
+> *  **Portal**
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Portal Service** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Worker** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Archiver** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
 
 > **[Fixes]**
 > 1. xxxxxxxxxxxxxxxxxxxxxxxxx
