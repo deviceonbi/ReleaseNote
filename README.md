@@ -1,7 +1,4 @@
 # WISE.M+ Release Note
-
-Tags: Version-Control;
-
 ---
 
 ## **0.50.004 Build002 (2019-4-29)**
