@@ -1,7 +1,7 @@
 # WISE.M+ Release Note
 ---
 
-## **0.50.004 Build002 (2019-4-30)**
+## **0.50.004 Build003 (2019-4-30)**
 > **[New Features]**
 > *  **Portal**
 >     1. Add auto refresh device status function;
