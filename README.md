@@ -21,10 +21,22 @@
 >     3. xxxxxxxxxxxxxxxxx
 
 > **[Fixes]**
-> 1. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 2. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 3. xxxxxxxxxxxxxxxxxxxxxxxxx
-> 4. xxxxxxxxxxxxxxxxxxxxxxxxx
+> *  **Portal**
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Portal Service** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Worker** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
+> * **Archiver** 
+>     1. xxxxxxxxxxxxxxxxx
+>     2. xxxxxxxxxxxxxxxxx
+>     3. xxxxxxxxxxxxxxxxx
 
 ## **0.50.004 Build001 (2019-4-28)**
 > **[New Features]**
