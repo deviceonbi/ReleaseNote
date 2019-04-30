@@ -7,6 +7,7 @@
 >     1. Add auto refresh device status function;
 >     2. Dashboard support multi-language;
 >     3. Change [Add Device] dialogue Layout;
+>     4. Add SSO Cookie to support Grafana Login;
 > * **Portal Service** 
 >     1. xxxxxxxxxxxxxxxxx
 >     2. xxxxxxxxxxxxxxxxx
