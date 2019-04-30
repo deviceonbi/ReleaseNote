@@ -1,12 +1,12 @@
 # WISE.M+ Release Note
 ---
 
-## **0.50.004 Build002 (2019-4-29)**
+## **0.50.004 Build002 (2019-4-30)**
 > **[New Features]**
 > *  **Portal**
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
+>     1. Add auto refresh device status function;
+>     2. Dashboard support multi-language;
+>     3. Change [Add Device] dialogue Layout;
 > * **Portal Service** 
 >     1. xxxxxxxxxxxxxxxxx
 >     2. xxxxxxxxxxxxxxxxx
