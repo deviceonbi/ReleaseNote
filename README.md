@@ -8,8 +8,9 @@
 >     2. Dashboard support multi-language;
 >     3. Change [Add Device] dialogue Layout;
 >     4. Add SSO Cookie to support Grafana Login;
+>     5. Add debug logs on system setting/others
 > * **Portal Service** 
->     1. xxxxxxxxxxxxxxxxx
+>     1. Add 
 >     2. xxxxxxxxxxxxxxxxx
 >     3. xxxxxxxxxxxxxxxxx
 > * **Worker** 
