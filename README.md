@@ -9,7 +9,7 @@
 >     3. Change [Add Device] dialogue Layout;
 >     4. Add SSO Cookie to support Grafana Login;
 > * **Portal Service** 
->     1. machine api add saveFreq(存储频率),paramShortName(参数名),stateTxt(存放数字量state0-state7) property;
+>     1. xxxxxxxxxxxxxxxxx
 >     2. xxxxxxxxxxxxxxxxx
 >     3. xxxxxxxxxxxxxxxxx
 > * **Worker** 
