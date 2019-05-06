@@ -9,6 +9,7 @@
 >     3. Change [Add Device] dialogue Layout;
 >     4. Add SSO Cookie to support Grafana Login;
 >     5. Add debug logs on system setting/others
+>     6. Add saveFreq,paramShortName,statetTxt字段,i/o点支持discrete数据类型；   
 > * **Portal Service** 
 >     1. Machine API add saveFreq(存储频率),paramShortName(参数名),stateTxt(存放数字量state0-state7) property
 >     2. Get Version API
