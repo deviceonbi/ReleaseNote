@@ -1,7 +1,7 @@
 # WISE.M+ Release Note
 ---
 
-## **0.50.004 Build003 (2019-5-5)**
+## **0.61.001 Build001 (2019-6-11)**
 > **[New Features]**
 > *  **Portal**
 >     1. Add auto refresh device status function;
@@ -23,23 +23,18 @@
 >     2. xxxxxxxxxxxxxxxxx
 >     3. xxxxxxxxxxxxxxxxx
 
-> **[Fixes]**
+## **0.50.004 Build003 (2019-5-5)**
+> **[New Features]**
 > *  **Portal**
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
+>     1. Add auto refresh device status function;
+>     2. Dashboard support multi-language;
+>     3. Change [Add Device] dialogue Layout;
+>     4. Add SSO Cookie to support Grafana Login;
+>     5. Add debug logs on system setting/others;
+>     6. Add saveFreq,paramShortName,statetTxt field；   
 > * **Portal Service** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Worker** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Archiver** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
+>     1. Machine API add saveFreq, paramShortName, stateTxt(state0-state7) property
+>     2. Get Version API
 
 ## **0.50.004 Build001 (2019-4-28)**
 > **[New Features]**
