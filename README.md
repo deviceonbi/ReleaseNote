@@ -1,5 +1,20 @@
 # WISE.M+ Release Note
 ---
+## **0.62.002 Build001 (2019-7-9)**
+> **[New Features]**
+> *  **Portal**
+>     1. Support online taginfo;
+>     2. Menu management support multi-language;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Support NB-IoT;
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. No changes
+> * **Notification&Alarm** 
+>     1. No Changes
 
 ## **0.61.001 Build001 (2019-6-11)**
 > **[New Features]**
