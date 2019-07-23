@@ -1,5 +1,37 @@
 # WISE.M+ Release Note
 ---
+## **0.62.002 Build001 (2019-7-9)**
+> **[New Features]**
+> *  **Portal**
+>     1. Support online taginfo;
+>     2. Menu management support multi-language;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Support NB-IoT;
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. No changes
+> * **Notification&Alarm** 
+>     1. No Changes
+
+## **0.61.001 Build001 (2019-6-11)**
+> **[New Features]**
+> *  **Portal**
+>     1. Support calculation tag;
+>     2. Support Alarm;
+>     3. More dashboard template;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Support new version WebAccess;
+>     2. Support MQTT Action=4
+>     3. Support calculation tag;
+> * **Archiver** 
+>     1. No changes
+> * **Notification&Alarm** 
+>     1. New Apps
 
 ## **0.50.004 Build003 (2019-5-5)**
 > **[New Features]**
@@ -8,37 +40,11 @@
 >     2. Dashboard support multi-language;
 >     3. Change [Add Device] dialogue Layout;
 >     4. Add SSO Cookie to support Grafana Login;
->     5. Add debug logs on system setting/others
+>     5. Add debug logs on system setting/others;
+>     6. Add saveFreq,paramShortName,statetTxt field；   
 > * **Portal Service** 
->     1. Machine API add saveFreq(存储频率),paramShortName(参数名),stateTxt(存放数字量state0-state7) property
+>     1. Machine API add saveFreq, paramShortName, stateTxt(state0-state7) property
 >     2. Get Version API
->     3. xxxxxxxxxxxxxxxxx
-> * **Worker** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Archiver** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-
-> **[Fixes]**
-> *  **Portal**
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Portal Service** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Worker** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
-> * **Archiver** 
->     1. xxxxxxxxxxxxxxxxx
->     2. xxxxxxxxxxxxxxxxx
->     3. xxxxxxxxxxxxxxxxx
 
 ## **0.50.004 Build001 (2019-4-28)**
 > **[New Features]**
