@@ -4,7 +4,8 @@
 > **[New Features]**
 > *  **Portal**
 >       1. add formula(no check) and code-list(click add version)
->          
+
+
 ## **0.62.003 Build001 (2019-7-23)**
 > **[New Features]**
 > *  **Portal**
