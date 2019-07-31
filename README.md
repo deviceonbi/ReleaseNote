@@ -3,8 +3,10 @@
 ## **Not yet release**
 > **[New Features]**
 > *  **Portal**
->       1. add formula(no check) and code-list(click add version)
-
+>       1. [Profile0.51][Calc Parameter] Add formula(no check) and code-list(click add version)
+        2. [Profile0.51][Calc Parameter] Add selectCodeSourceDialog
+        3. [Profile0.51][Object Profile] Add upload dialog component(For profile & alarm code file upload)
+        4. [Profile0.51][Object Profile] Add upload alarm code (Excel format)
 
 ## **0.62.003 Build001 (2019-7-23)**
 > **[New Features]**
