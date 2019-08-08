@@ -8,6 +8,24 @@
         3. [Profile0.51][Object Profile] Add upload dialog component(For profile & alarm code file upload)
         4. [Profile0.51][Object Profile] Add upload alarm code (Excel format)
 
+## **0.62.004 Build001 (2019-8-8)**
+> **[New Features]**
+> *  **Portal**
+>     1. Update UI/UX to 0.52 version;
+>     2.*Support iSensing Device;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Support iSensing Device;
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. Change to data access by object
+> * **Notification&Alarm** 
+>     1. Fixed some bugs;
+> * **DBCreator** 
+>     1. Change the build package to Gradle Mode
+
 ## **0.62.003 Build001 (2019-7-23)**
 > **[New Features]**
 > *  **Portal**
