@@ -1,5 +1,50 @@
 # WISE.M+ Release Note
 ---
+## **Not yet release**
+> **[New Features]**
+> *  **Portal**
+>       1. [Profile0.51][Calc Parameter] Add formula(no check) and code-list(click add version)
+        2. [Profile0.51][Calc Parameter] Add selectCodeSourceDialog
+        3. [Profile0.51][Object Profile] Add upload dialog component(For profile & alarm code file upload)
+        4. [Profile0.51][Object Profile] Add upload alarm code (Excel format)
+
+## **0.62.004 Build001 (2019-8-8)**
+> **[New Features]**
+> *  **Portal**
+>     1. Update UI/UX to 0.52 version;
+>     2.*Support iSensing Device;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Support iSensing Device;
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. Change to data access by object
+> * **Notification&Alarm** 
+>     1. Fixed some bugs;
+> * **DBCreator** 
+>     1. Change the build package to Gradle Mode
+
+## **0.62.003 Build001 (2019-7-23)**
+> **[New Features]**
+> *  **Portal**
+>     1. Update UI/UX to 0.52 version;
+>     2. Show Creator of Device in Device List;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. Seperate database creator to dbcreator;
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. No changes
+> * **Notification&Alarm** 
+>     1. Support Line
+> * **DBCreator** 
+>     1. Seperated from the worker;
+>     2. Will change this APP to cf Task next version;
+
 ## **0.62.002 Build001 (2019-7-9)**
 > **[New Features]**
 > *  **Portal**
