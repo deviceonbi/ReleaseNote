@@ -7,6 +7,24 @@
         2. [Profile0.51][Calc Parameter] Add selectCodeSourceDialog
         3. [Profile0.51][Object Profile] Add upload dialog component(For profile & alarm code file upload)
         4. [Profile0.51][Object Profile] Add upload alarm code (Excel format)
+        
+## **0.62.005 Build001 (2019-8-16)**
+> **[New Features]**
+> *  **Portal**
+>     1. Update UI/UX to 0.52 version;
+>     2.*Support iSensing Device;
+>     3. Fixed some bugs;
+> * **Portal Service** 
+>     1. As portal;
+> * **Worker** 
+>     1. 增加支持毫秒数不为 3 位数的 timestamp 格式. 完成功能: 自定义函数记录到PostgreSQL中. 取消输出log: Send message to iot-hub, topic=xxx, message=xxx 消息, 以减少log。 增加功能: 如果没有配置 tag.datatype，则自动把数值类型点的 datatype 设为1，非数值的设为3. 支持外挂计算函数每个函数有独立的 serviceurl。
+>     2. Fixed some bugs;
+> * **Archiver** 
+>     1. Change to data access by object
+> * **Notification&Alarm** 
+>     1. Fixed some bugs;
+> * **DBCreator** 
+>     1. Change the build package to Gradle Mode
 
 ## **0.62.004 Build001 (2019-8-8)**
 > **[New Features]**
