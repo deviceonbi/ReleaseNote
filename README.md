@@ -27,7 +27,7 @@
 > **[New Features]**
 > *  **Portal**
 >     1. Update UI/UX to 0.52 version;
->     2.*Support iSensing Device;
+>     2. Support iSensing Device;
 >     3. Fixed some bugs;
 > * **Portal Service** 
 >     1. As portal;
@@ -45,7 +45,7 @@
 > **[New Features]**
 > *  **Portal**
 >     1. Update UI/UX to 0.52 version;
->     2.*Support iSensing Device;
+>     2. Support iSensing Device;
 >     3. Fixed some bugs;
 > * **Portal Service** 
 >     1. As portal;
