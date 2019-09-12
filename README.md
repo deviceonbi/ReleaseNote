@@ -1,18 +1,33 @@
 # WISE.M+ Release Note
 ---
-## **Not yet release**
+## **0.80.001 (2019-09-18)**
 > **[New Features]**
 > *  **Portal**
->       1. [Profile0.51][Calc Parameter] Add formula(no check) and code-list(click add version)
-        2. [Profile0.51][Calc Parameter] Add selectCodeSourceDialog
-        3. [Profile0.51][Object Profile] Add upload dialog component(For profile & alarm code file upload)
-        4. [Profile0.51][Object Profile] Add upload alarm code (Excel format)
+>       - [Organization]   
+>   
+>       - [Profile Management]   
+>           1. [Update] New UI/UX for Object Profile
+>           2. [Update] Change Alarm Code List file from .csv to .xlsx (Excel Format)
+>           3. [Add] Search Profile by Category filter
+>           4. [Add] Search Profile by Name (fuzzy search)
+>           5. [Add] Profile Privacy (Only can see Public Profiles and login user's Private Profile)
+>           6. [Add] Calculation Parameter support formula check and auto generate code
+>           7. [Add] Profile Preview from Profile Management Page
+>       - [Menu Management]   
+>           1. [Add] Support Multiple SRP in one organization
+>           2. [Update] Select Dashboard Dialog can list all dashboards of this org in WISE-PaaS Dashboard
+>           3. [Add] Drag & Drop configuration for menu tree
+>       - [Alarm & Notification]
+>           1. [Fix][Notification Group] Cannot change Alarm Group / User Group in Edit Mode
+>           2. [Fix][Notification Group] Alarm Group / User Group with placeholder and light color
+>           3. [Add][Notification Group] Can add Group/Object/Parameter path text in message by "Select Variable Dialog"
+>
         
 ## **0.62.005 Build001 (2019-8-16)**
 > **[New Features]**
 > *  **Portal**
 >     1. Update UI/UX to 0.52 version;
->     2.*Support iSensing Device;
+>     2. Support iSensing Device;
 >     3. Fixed some bugs;
 > * **Portal Service** 
 >     1. As portal;
@@ -30,7 +45,7 @@
 > **[New Features]**
 > *  **Portal**
 >     1. Update UI/UX to 0.52 version;
->     2.*Support iSensing Device;
+>     2. Support iSensing Device;
 >     3. Fixed some bugs;
 > * **Portal Service** 
 >     1. As portal;
