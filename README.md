@@ -1,5 +1,23 @@
 # WISE.M+ Release Note
 ---
+## **0.80.003 (2019-09-20)**
+> **[New Features]**
+> *  **Portal**
+>       - [UI]   
+>           1. [Fix] New UI bug fixed
+> *  **dbcreator**
+>       - [Space manager]   
+>           1. [Fix] insert the default, which id=0 account as space manager
+
+## **0.80.002 (2019-09-19)**
+> **[New Features]**
+> *  **Portal**
+>       - [UI]   
+>           1. [Fix] New UI bug fixed
+> *  **Dataworker**
+>       - [Calc Tag]   
+>           1. [Fix] by Timer/by Event bug, if Calculation frequency=0 second, will by Event
+
 ## **0.80.001 (2019-09-18)**
 > **[New Features]**
 > *  **Portal**
