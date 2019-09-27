@@ -7,7 +7,8 @@
 >           1. [Fix] New UI bug fixed;
 >           2. [Update] Support object/dev/org/group name auto filter front/end space and  case insensitive;
 > *  **dbcreator**
->           1. [Fix]Fix the bugs of the user role as space manager;
+>       - [Role and User] 
+>           1. [Fix] Fix the bugs of the user role as space manager;
 
 ## **0.80.004 (2019-09-23)**
 > **[New Features]**
