@@ -1,5 +1,25 @@
 # WISE.M+ Release Note
 ---
+## **0.80.005 (2019-09-27)**
+> **[New Features]**
+> *  **Portal**
+>       - [UI]   
+>           1. [Fix] New UI bug fixed;
+>           2. [Update] Support object/dev/org/group name auto filter front/end space and  case insensitive;
+> *  **dbcreator**
+>       - [Role and User] 
+>           1. [Fix] Fix the bugs of the user role as space manager;
+
+## **0.80.004 (2019-09-23)**
+> **[New Features]**
+> *  **Portal**
+>       - [UI]   
+>           1. [Fix] New UI bug fixed
+>           2. [Update] Update SSO and UI css
+> *  **dbcreator**
+>       - [Resource]   
+>           1. [Update] Add new message string and tips
+
 ## **0.80.003 (2019-09-20)**
 > **[New Features]**
 > *  **Portal**
