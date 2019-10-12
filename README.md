@@ -11,15 +11,15 @@
 >       - [New features] 
 >           1. [Add] Change tag value时，如果新的value是一个字符串形式的数值, 则自动转成数值, 且isNum设为true。 Amqp consumer 保存为 MainClass 的静态对象, 以测试是否能解决broker重启后无法重新绑定到channel的问题。 timer thread 也保存为 MainClass 的静态对象, 测试是否是非静态对象导致 timer thread 停掉。 logDebugMsg 接口从 TimerThread class 中转移到 _Util class 中。 增加内置数学函数 pow 的支持;
 >           2. [Fix] Fixed the bug of iSensing and NB-IoT device cannot upload data;
-> *  *Portal**
+> *  **Portal**
 >       -[Menu Management]
->         - create multiple srpFrame -> save -> check on menuManagement
->         - create multiple srpFrame -> same srpNamename, but different upper or lower case -> save
->         - edit srpframe -> same srpNamename, but different upper or lower case -> save
->         - edit srpframe -> not change srpName -> save
->         - edit srpframe -> rename -> save
->         - delete srpframe
->         - 新增同名, 但不同org的SRPFrame -> 對其中一個進行rename, Delete不會影響另一個srpframe
+>         1. create multiple srpFrame -> save -> check on menuManagement
+>         2. create multiple srpFrame -> same srpNamename, but different upper or lower case -> save
+>         3. edit srpframe -> same srpNamename, but different upper or lower case -> save
+>         4. edit srpframe -> not change srpName -> save
+>         5. edit srpframe -> rename -> save
+>         6. delete srpframe
+>         7. 新增同名, 但不同org的SRPFrame -> 對其中一個進行rename, Delete不會影響另一個srpframe
 
 ## **0.80.005 (2019-09-27)**
 > **[New Features]**
