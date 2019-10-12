@@ -1,5 +1,26 @@
 # WISE.M+ Release Note
 ---
+## **0.80.006 (2019-10-12)**
+> **[Bug Fix]**
+> *  **Portal**
+>       - [Fix Bug]   
+>           1. [Fix] 常数点更新初始值栏位在 profile 里隐藏。Object 模式下，当新建 常数点的时候隐藏。
+>           2. [Fix] 修补当页面数据量大切换org 时， 编辑上一个org 的 object 会将 object 存到当前Org 下的bug。解决办法：编辑时不更新orgId，object 加载完毕再结束loading。
+>           3. [Fix]修补当处于object 编辑页面时，token 失效后重新登录，继续编辑后点保存，此时Org id 被重置， 会保存到最新被选中的org 下的问题。解决办法：如果是新增，取用户点新增按钮时候的id,如果是编辑，不会更新orgid;
+> *  **dataworker**
+>       - [New features] 
+>           1. [Add] Change tag value时，如果新的value是一个字符串形式的数值, 则自动转成数值, 且isNum设为true。 Amqp consumer 保存为 MainClass 的静态对象, 以测试是否能解决broker重启后无法重新绑定到channel的问题。 timer thread 也保存为 MainClass 的静态对象, 测试是否是非静态对象导致 timer thread 停掉。 logDebugMsg 接口从 TimerThread class 中转移到 _Util class 中。 增加内置数学函数 pow 的支持;
+>           2. [Fix] Fixed the bug of iSensing and NB-IoT device cannot upload data;
+> *  *Portal**
+>       -[Menu Management]
+>         - create multiple srpFrame -> save -> check on menuManagement
+>         - create multiple srpFrame -> same srpNamename, but different upper or lower case -> save
+>         - edit srpframe -> same srpNamename, but different upper or lower case -> save
+>         - edit srpframe -> not change srpName -> save
+>         - edit srpframe -> rename -> save
+>         - delete srpframe
+>         - 新增同名, 但不同org的SRPFrame -> 對其中一個進行rename, Delete不會影響另一個srpframe
+
 ## **0.80.005 (2019-09-27)**
 > **[New Features]**
 > *  **Portal**
