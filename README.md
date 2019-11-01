@@ -1,5 +1,70 @@
 # WISE.M+ Release Note
 ---
+## **0.80.007 (2019-11-01)**
+> **[Bug Fix]**
+> *  **Portal**
+>       - [Object]   
+>           1. [Fix] Click ‘>’ when no device information is requested, and the device information will be requested automatically until the data comes back, and then the data will be moved from left to right;
+>           2. [Fix] Add description for 0,1 change stateTxt from ‘’ to ‘[[0,0],[1,1]’
+>           3. [Fix] Fix constant point data type error when coming from profile change 31/32/33 to 11,12,13;
+>           4. [Fix] Fix the bug that parameter DOM does not update sometimes after paramtype changes;
+>           5. [Fix] Fix bug defect #18307: alarm 在object裡的參數設定警報時，range類型的H警報無法由>=改為>;
+>           6. [Fix] Fix bug: ‘==’ was mistaked to ‘/b==’
+>       - [Device]
+>           1. [Fix][device 时间戳] edit 时间戳可以修改 Edit device timestamp to be modifiable;
+>           2. [Fix][tagInfo]  列表 unit 重复 tagInfo list unit field displays Unit
+>           3. [Fix][iSensing] iSensing生成按钮disabled, User clicks "Generate" button get username and password. "Generate" button could not be clicked before the data came back. After the data was responsed successfully, it became clickable;
+>       - [Profile]
+>           1. [Fix] 如果Excel中，Complex Alarm只設定一個Range上傳會失敗;
+>           2. [Fix] 檢查完整份Excel後顯示完整錯誤 目前支援檢查：
+>               - parmeterName : Empty / include special symbol / duplicate /  only contain space
+>               - paramType : Empty
+>               - value : Empty
+>               - dataType : Empty
+>           3. [Fix] Decimal Places / Calculating Rate / Days to keep data / Max change rate若設為0沒辦法正確Save;
+>           4. [Fix] Excel 內的 decimalPrecision, dataKeptDays, maxChangeRatePerMin, recRate, calcRate 若設為0，生成Profile沒有正確填0而是填預設值;
+>       - [upload / delete dialog multi-lang] - 上傳 / 刪除的dialog多語言
+>           - 打開 profile，上傳 alarm code excel 同時 check 語言是否與 tab 相同，上傳成功後刪除 alarm code excel ，並檢查刪除時的語言是否有跟隨 tab，切換至下一個 tab 重複動作
+>           - 上傳 alarm code excel，切換至不同語言的 tab 做刪除的動作，check 刪除的語言是否有跟隨 tab
+>           - 故意傳不接受的類型或過大的檔案檢查文件上傳錯誤的訊息語言是否有跟隨 tab 更換
+>           - 圖片的部分與上述 alarm code excel 的測試手法相同
+>           - profileManagement 或 menuManagement 刪除 card -> 跳出 delete dialog -> 取消或確認 -> 切換系統語言反覆測試
+>           - 開啟有 parameter 的 profile 點選刪除 parameter -> check 語言跟隨 tab -> 取消或確認 -> 切換 tab 反覆測試
+>           - 開啟有 image upload 的 dashboard 或 profile -> 確認上傳語言-> 確認 message 語言 -> 確認刪除語言
+
+> *  **dataworker**
+>       - [Connection] 
+>           1. [Fix] 当数据的时间戳毫秒部分是 ‘0’ 或 ’00’ 时, DataThread 会陷入死循环导致无法处理数据且占CPU 100%;
+>           2. [enhance] 增加探测线程是否被阻塞或当掉, 如果发生, 则记录线程栈状态并重启线程
+> *  **Notification**
+>       - [Alarm Priority]
+>           1. [Fix] 修改 almtrigger 中 Priority 由 int 改为 string 的遗留问题，之前未修改全。
+
+## **0.80.006 (2019-10-12)**
+> **[Bug Fix]**
+> *  **Portal**
+>       - [Object]   
+>           1. [Fix] 常数点更新初始值栏位在 profile 里隐藏。Object 模式下，当新建 常数点的时候隐藏。
+>           2. [Fix] 修补当页面数据量大切换org 时， 编辑上一个org 的 object 会将 object 存到当前Org 下的bug。解决办法：编辑时不更新orgId，object 加载完毕再结束loading。
+>           3. [Fix] 修补当处于object 编辑页面时，token 失效后重新登录，继续编辑后点保存，此时Org id 被重置， 会保存到最新被选中的org 下的问题。解决办法：如果是新增，取用户点新增按钮时候的id,如果是编辑，不会更新orgid;
+>           4. [Fix] DataType of Deadband(float), Alarm Delay(positive integer), Alarm Restore Delay(positive integer)
+> *  **dataworker**
+>       - [Connection] 
+>           1. [Fix] Fixed the bug of iSensing and NB-IoT device cannot upload data;
+> *  **Alarm Service**
+>       - [Message Queue]
+>           1. [Fix] 把RabbitMQ Queue的AutoDelete改成false, 避免失去連線後queue被自動刪除
+>           2. [Fix] 加上log, 如果某一個message處理太久會寫下log   
+> *  **Panel**
+>       - [controller-switch]
+>           1. [Fix] Cannot setvalue bug @ first button
+>           2. [Fix] Cannot change button color properly while set same tag @ both side of button
+
+> **[Add]**
+> *  **dataworker**
+>       - [DataProcess] 
+>           1. [Add] Change tag value时，如果新的value是一个字符串形式的数值, 则自动转成数值, 且isNum设为true。 Amqp consumer 保存为 MainClass 的静态对象, 以测试是否能解决broker重启后无法重新绑定到channel的问题。 timer thread 也保存为 MainClass 的静态对象, 测试是否是非静态对象导致 timer thread 停掉。 logDebugMsg 接口从 TimerThread class 中转移到 _Util class 中。 增加内置数学函数 pow 的支持;
+
 ## **0.80.005 (2019-09-27)**
 > **[New Features]**
 > *  **Portal**
