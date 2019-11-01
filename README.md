@@ -24,13 +24,13 @@
 >           3. [Fix] Decimal Places / Calculating Rate / Days to keep data / Max change rate若設為0沒辦法正確Save;
 >           4. [Fix] Excel 內的 decimalPrecision, dataKeptDays, maxChangeRatePerMin, recRate, calcRate 若設為0，生成Profile沒有正確填0而是填預設值;
 >       - [upload / delete dialog multi-lang] - 上傳 / 刪除的dialog多語言
->               - 打開 profile，上傳 alarm code excel 同時 check 語言是否與 tab 相同，上傳成功後刪除 alarm code excel ，並檢查刪除時的語言是否有跟隨 tab，切換至下一個 tab 重複動作
->               - 上傳 alarm code excel，切換至不同語言的 tab 做刪除的動作，check 刪除的語言是否有跟隨 tab
->               - 故意傳不接受的類型或過大的檔案檢查文件上傳錯誤的訊息語言是否有跟隨 tab 更換
->               - 圖片的部分與上述 alarm code excel 的測試手法相同
->               - profileManagement 或 menuManagement 刪除 card -> 跳出 delete dialog -> 取消或確認 -> 切換系統語言反覆測試
->               - 開啟有 parameter 的 profile 點選刪除 parameter -> check 語言跟隨 tab -> 取消或確認 -> 切換 tab 反覆測試
->               - 開啟有 image upload 的 dashboard 或 profile -> 確認上傳語言-> 確認 message 語言 -> 確認刪除語言
+>           - 打開 profile，上傳 alarm code excel 同時 check 語言是否與 tab 相同，上傳成功後刪除 alarm code excel ，並檢查刪除時的語言是否有跟隨 tab，切換至下一個 tab 重複動作
+>           - 上傳 alarm code excel，切換至不同語言的 tab 做刪除的動作，check 刪除的語言是否有跟隨 tab
+>           - 故意傳不接受的類型或過大的檔案檢查文件上傳錯誤的訊息語言是否有跟隨 tab 更換
+>           - 圖片的部分與上述 alarm code excel 的測試手法相同
+>           - profileManagement 或 menuManagement 刪除 card -> 跳出 delete dialog -> 取消或確認 -> 切換系統語言反覆測試
+>           - 開啟有 parameter 的 profile 點選刪除 parameter -> check 語言跟隨 tab -> 取消或確認 -> 切換 tab 反覆測試
+>           - 開啟有 image upload 的 dashboard 或 profile -> 確認上傳語言-> 確認 message 語言 -> 確認刪除語言
 
 > *  **dataworker**
 >       - [Connection] 
