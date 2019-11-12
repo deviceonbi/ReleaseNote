@@ -1,5 +1,28 @@
 # WISE.M+ Release Note
 ---
+## **0.81.001 (2019-11-12)**
+> **[Bug Fix]**
+> *  **Profile**
+>       - [Proxy]   
+>           1. [Update] use api-profile-proxy  URL instead of apm URL
+> *  **Dataworker**
+>       - [Enhance]
+>           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
+>           2. [Update] 增加设置 10 秒的 MongoDB serverSelectionTimeout 时间，
+>           3. [Update] 增加设置 10 秒的 MongoDB socketTimeout 时间，
+>           4. [Update] 加载 device 资料时，略过 edgeid 为空的 device。
+>           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
+>           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
+>           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
+
+## **0.80.008 (2019-11-11)**
+> **[Bug Fix]**
+> *  **Portal**
+>       - [Object]   
+>           1. [Fix] Fix bug Defect #18458 建立object將左側DataSource移至右側時會選不到測點
+>           2. [Fix] Fix bug Defect #18457 建立object時，點擊所新增設備測點名稱DataSource欄位為空白
+>       - [Alarm]
+>           1. alarm group的 alarm rules的多选框默认选择一项，清空后取消勾选，发生修改时user management，space manager被邀请的用户不允许修改信息，list 的按钮显示为view图标，创建space manager时对非当前用户创建的子用户添加邀请机制
 ## **0.80.007 (2019-11-01)**
 > **[Bug Fix]**
 > *  **Portal**
@@ -8,8 +31,8 @@
 >           2. [Fix] Add description for 0,1 change stateTxt from ‘’ to ‘[[0,0],[1,1]’
 >           3. [Fix] Fix constant point data type error when coming from profile change 31/32/33 to 11,12,13;
 >           4. [Fix] Fix the bug that parameter DOM does not update sometimes after paramtype changes;
->           5. [Fix] Fix bug defect #18307: alarm 在object裡的參數設定警報時，range類型的H警報無法由>=改為>;
->           6. [Fix] Fix bug: ‘==’ was mistaked to ‘/b==’
+>           5. [Fix] Fix bug defect #18307:alarm 在object裡的參數設定警報時，range類型的H警報無法由>=改為>;
+>           6. [Fix] Fix bug: “==” was mistaked to “/ b ==”
 >       - [Device]
 >           1. [Fix][device 时间戳] edit 时间戳可以修改 Edit device timestamp to be modifiable;
 >           2. [Fix][tagInfo]  列表 unit 重复 tagInfo list unit field displays Unit
