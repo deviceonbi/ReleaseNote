@@ -1,6 +1,6 @@
 # WISE.M+ Release Note
 ---
-## **0.81.001 (2019-11-12)**
+## **0.81.001 (2019-11-15)**
 > **[Bug Fix]**
 > *  **Profile**
 >       - [Proxy]   
@@ -14,6 +14,19 @@
 >           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
 >           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
 >           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
+> *  **Menu Management**
+>       - [CSS Bug]
+>           1. [Fix] bugfix: 修正新增拖拉&收合功能後產生的menu tree css bug。
+> *  **Profile**
+>       - [Parameter UI]
+>           1. [Fix] bugfix: 在Parameter List中的Formula cell增加ellipsis(...) 讓超出長度的文字以...表示。
+>           2. [Fix] bugfix: 修正category 輸入框顯示高度太窄問題。
+> *  **Portal**
+>       - [Object UI]
+>           1. [Fix] bugfix: 修正Defect #18553 新建object from profile會拿到非預期的圖片。
+> *  **Notification Group**
+>       - [UI]
+>           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
 
 ## **0.80.008 (2019-11-11)**
 > **[Bug Fix]**
