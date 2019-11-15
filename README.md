@@ -27,6 +27,9 @@
 > *  **Notification Group**
 >       - [UI]
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
+> *  **Data source**
+>       - [Raw Data]
+>           1. [Update] 分钟历史数据，查询范围起始补前一笔数据，2.新增rawdata，limit为900。
 
 ## **0.80.008 (2019-11-11)**
 > **[Bug Fix]**
