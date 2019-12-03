@@ -1,6 +1,6 @@
 # WISE.M+ Release Note
 ---
-## **0.81.001 (2019-11-15)**
+## **0.81.001 (2019-12-3)**
 > **[Bug Fix]**
 > *  **Profile**
 >       - [Proxy]   
@@ -21,15 +21,39 @@
 >       - [Parameter UI]
 >           1. [Fix] bugfix: 在Parameter List中的Formula cell增加ellipsis(...) 讓超出長度的文字以...表示。
 >           2. [Fix] bugfix: 修正category 輸入框顯示高度太窄問題。
+>           3. [Fix] 修正hover category tag時，Delete button出現圓圈並超出外框
 > *  **Portal**
 >       - [Object UI]
 >           1. [Fix] bugfix: 修正Defect #18553 新建object from profile會拿到非預期的圖片。
+> *  **API Portal**
+>       - [new feature]
+>           1. edge add errcode
+>           2. edge blocktypename 不区分大小写
+>           3. org Admin可以添加new user
+>           4. 添加非space manager不能删除root org的限制
 > *  **Notification Group**
 >       - [UI]
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
 > *  **Data source**
 >       - [Raw Data]
 >           1. [Update] 分钟历史数据，查询范围起始补前一笔数据，2.新增rawdata，limit为900。
+>       - [New Features]
+>           1. datasource新增displayname dropdown
+>           2. 新增历史数据Minute,Day,Week,Month,Year支持补数据
+>           3. 新增rawdata原始数据，返回结果上限900
+>           4. datasource新增cumulate datatype
+>           5. 提升hisdata，rawdata查询速度
+>       - [fixbug]
+>           1. 修复rtdata返回结果在graph panel中不显示问题
+>           2. 修复digital点历史值查询不到问题
+>           3. 修复graph legend与时间轴不对应问题
+>           4. 修复部分查询不能返回target问题
+>       - [function type]
+>           1. objectmonitor返回结果新增column
+>           2. 新增object/groupStatusDuration/Occurrence，object/groupAvail计算digital点状态发生时数，启动次数及时间稼动率
+>           3. objectmonitor，alarmlog_rt，alarmlog_his，worldmap使用M+ object设置的【Additional Message URL】作为额外信息链接
+>           4. worldmap支持cumulate数据
+>           5. alarmlog_rt新增parameter作为返回数据的column
 
 ## **0.80.008 (2019-11-11)**
 > **[Bug Fix]**
