@@ -22,6 +22,25 @@
 >           1. [Fix] bugfix: 在Parameter List中的Formula cell增加ellipsis(...) 讓超出長度的文字以...表示。
 >           2. [Fix] bugfix: 修正category 輸入框顯示高度太窄問題。
 >           3. [Fix] 修正hover category tag時，Delete button出現圓圈並超出外框
+>       - [Excel]
+>           1. 新增Excel欄位Validation, 並顯示每個錯誤的Cell欄位 :
+>           2. Information分頁
+>              a) profileName 未填or只填空格
+>              b) mode 未填or只填空格
+>           3. Parameter分頁, 必填欄位未填or只填空格
+>              a) 不分類型的必填欄位包含
+>                    parameterName / paramType / dataType / value / 
+>                    groupRec / recRate / dataKeptDays
+>              b) Number類型額外必填欄位包含
+>                    spanHi / spanLo / decimalPrecision / recType
+>                    maxChangeRatePerMin
+>              c) 計算點額外必填欄位包含
+>                    calcRate / formula
+>           4. 其他分頁的parameterName未填or只填空格 
+>           5. spanHi < spanLo
+>           6. span Hi, spanLo, decimalPrecision不是number
+>           7. 錯誤的 paramType and dataType
+>           8. parameterName重複或含有特殊字元(目前特殊字元只允許-_)
 > *  **Portal**
 >       - [Object UI]
 >           1. [Fix] bugfix: 修正Defect #18553 新建object from profile會拿到非預期的圖片。
@@ -31,9 +50,17 @@
 >           2. edge blocktypename 不区分大小写
 >           3. org Admin可以添加new user
 >           4. 添加非space manager不能删除root org的限制
+>           5. 添加root org的admin可以看到所有子组织不管是否有权限；并且可以把自己加入没有权限的组织中
+>           6. alarm tag group支持报警区间多选
+>           7. M+ Admin对应Dashboard org Admin M+其余角色对应viewer
+>       - [fix]
+>           1. fix alarm notification messageccontain '' ""创建notification group会失败的问题
+>           2. 如果org下面已经创建alarmusergroup删除org会失败的问题
+>           3. fix 当notification权限scope已存在时报错的问题
 > *  **Notification Group**
 >       - [UI]
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
+>           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
 > *  **Data source**
 >       - [Raw Data]
 >           1. [Update] 分钟历史数据，查询范围起始补前一笔数据，2.新增rawdata，limit为900。
