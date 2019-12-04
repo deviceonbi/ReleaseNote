@@ -73,15 +73,15 @@
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
 >           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
 >       - [new feature]
->           + group/organization 
->           1. [New] 修改建组织的操作流程：建组织第一步先选模板(可不选)
->           2. [New] 新建组织时创建默认物件，与组织同名。更新组织时同步更新默认Object 
->           3. [New] 修改语言切换bar位置
->           4. [New] 添加头部引导条
->           5. [New] 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值
->           6. [New] worldmap template 添加清空按钮，可不填
->           7. [New] 编辑模式下隐藏引导条
->           + object 
+>           1. group/organization 
+>           2. [New] 修改建组织的操作流程：建组织第一步先选模板(可不选)
+>           3. [New] 新建组织时创建默认物件，与组织同名。更新组织时同步更新默认Object 
+>           4. [New] 修改语言切换bar位置
+>           5. [New] 添加头部引导条
+>           6. [New] 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值
+>           7. [New] worldmap template 添加清空按钮，可不填
+>           8. [New] 编辑模式下隐藏引导条
+>           1. object 
 >               + select parameter
 >               + 界面新增 block type
 >               + 默认展示的参数个数从10改到30
