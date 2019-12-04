@@ -74,7 +74,7 @@
 >           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
 >       - [new feature]
 >           1. group/organization 
->           2. [New] 修改建组织的操作流程：建组织第一步先选模板(可不选)
+>           2. [New] 修改建组织的操作流程：建组织第一步先选模板/可不选
 >           3. [New] 新建组织时创建默认物件，与组织同名。更新组织时同步更新默认Object 
 >           4. [New] 修改语言切换bar位置
 >           5. [New] 添加头部引导条
