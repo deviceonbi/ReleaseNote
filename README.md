@@ -74,13 +74,13 @@
 >           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
 >       - [new feature]
 >           + group/organization 
->               + 修改建组织的操作流程：建组织第一步先选模板(可不选)
->               + 新建组织时创建默认物件，与组织同名。更新组织时同步更新默认Object 
->               + 修改语言切换bar位置
->               + 添加头部引导条
->               + 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值
->               + worldmap template 添加清空按钮，可不填
->               + 编辑模式下隐藏引导条
+>               1. 修改建组织的操作流程：建组织第一步先选模板(可不选)
+>               2. 新建组织时创建默认物件，与组织同名。更新组织时同步更新默认Object 
+>               3. 修改语言切换bar位置
+>               4. 添加头部引导条
+>               5. 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值
+>               6. worldmap template 添加清空按钮，可不填
+>               7. 编辑模式下隐藏引导条
 >           + object 
 >               + select parameter
 >               + 界面新增 block type
