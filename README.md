@@ -1,28 +1,33 @@
 # WISE.M+ Release Note
 ---
 ## **0.81.001 (2019-12-3)**
-> **[Bug Fix]**
-> *  **Profile**
+> *  **Profile Proxy**
 >       - [Proxy]   
 >           1. [Update] use api-profile-proxy  URL instead of apm URL
-> *  **Dataworker**
->       - [Enhance]
->           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
->           2. [Update] 增加设置 10 秒的 MongoDB serverSelectionTimeout 时间，
->           3. [Update] 增加设置 10 秒的 MongoDB socketTimeout 时间，
->           4. [Update] 加载 device 资料时，略过 edgeid 为空的 device。
->           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
->           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
->           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
 > *  **Menu Management**
+>       - [UI]
+>           1. [Add] Support Multiple Menu in one ong
+>           2. [Add] Support sync menu tree with first language's tree
+>           3. [Add] Support Menu Tree Dragable
+>           4. [Update] 固定Dialog大小，新增Menu Tree Scroll Bar
+>           5. [Add] Support collapse menu tree
+>             
 >       - [CSS Bug]
 >           1. [Fix] bugfix: 修正新增拖拉&收合功能後產生的menu tree css bug。
 > *  **Profile**
+>       - [UI]
+>           1. [Add] Sort Profile Card by name, created date or owner; order by asc., desc.
+>       - [Category]
+>           1. [Update] Category Validation
+>              a) 'Uncategorized'保留字 
+>              b) 最大長度64
+>              c) 除了 -_. 以外的特殊字元過濾
+>           2. [Update] Category Sort by Name 
 >       - [Parameter UI]
 >           1. [Fix] bugfix: 在Parameter List中的Formula cell增加ellipsis(...) 讓超出長度的文字以...表示。
 >           2. [Fix] bugfix: 修正category 輸入框顯示高度太窄問題。
 >           3. [Fix] 修正hover category tag時，Delete button出現圓圈並超出外框
->       - [Excel]
+>       - [Profile Excel]
 >           1. 新增Excel欄位Validation, 並顯示每個錯誤的Cell欄位 :
 >           2. Information分頁
 >              a) profileName 未填or只填空格
@@ -41,10 +46,32 @@
 >           6. span Hi, spanLo, decimalPrecision不是number
 >           7. 錯誤的 paramType and dataType
 >           8. parameterName重複或含有特殊字元(目前特殊字元只允許-_)
+>       - [Alarm Code Excel]
+>           1. [Add] Alarm Code Excel新增ja欄位
 > *  **Portal**
 >       - [Object UI]
 >           1. [Fix] bugfix: 修正Defect #18553 新建object from profile會拿到非預期的圖片。
-> *  **API Portal**
+>       - [Multi-language]
+>           1. [Fix] Correct multi-language of Upload Image / Upload alarm code / delete profile / delete menu / delete parameter dialog
+> *  **User Function**
+>       - [New Function] 
+>           1. [Add] getGroupAlarmStatus : 遍歷Group下所有object，有沒有"正在發生"的Alarm
+>           2. [Add] getObjectAlarmStatus : 查詢這個計算點所在的object有沒有"正在發生"的Alarm
+>           3. [Add] getGroupParamSum: 遍歷Group下所有object的某一個Param的當前值加總
+> *  **Notification Group**
+>       - [UI]
+>           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
+>           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
+> *  **Dataworker**
+>       - [Enhance]
+>           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
+>           2. [Update] 增加设置 10 秒的 MongoDB serverSelectionTimeout 时间，
+>           3. [Update] 增加设置 10 秒的 MongoDB socketTimeout 时间，
+>           4. [Update] 加载 device 资料时，略过 edgeid 为空的 device。
+>           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
+>           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
+>           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
+> *  **Portal API**
 >       - [new feature]
 >           1. edge add errcode
 >           2. edge blocktypename 不区分大小写
@@ -57,10 +84,11 @@
 >           1. fix alarm notification messageccontain '' ""创建notification group会失败的问题
 >           2. 如果org下面已经创建alarmusergroup删除org会失败的问题
 >           3. fix 当notification权限scope已存在时报错的问题
-> *  **Notification Group**
->       - [UI]
->           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
->           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
+> *  **Alarm Service**
+>       - [New Feature]
+>           1. 新增Test Message偵測AMQP連線是否正常
+>       - [Fix]
+>           1. 修正update rule有帶symbol但沒帶region造成判斷錯誤
 > *  **Data source**
 >       - [Raw Data]
 >           1. [Update] 分钟历史数据，查询范围起始补前一笔数据，2.新增rawdata，limit为900。
@@ -81,6 +109,13 @@
 >           3. objectmonitor，alarmlog_rt，alarmlog_his，worldmap使用M+ object设置的【Additional Message URL】作为额外信息链接
 >           4. worldmap支持cumulate数据
 >           5. alarmlog_rt新增parameter作为返回数据的column
+> *  **Panel**
+>       - [New][Log Chart Panel] 
+>           1. [Add] 支援以log格式的Y軸顯示數據
+>           2. [Add] 支援timeseries的query data format
+>           3. [Add] 支援x軸時間格式修改
+>           4. [Add] 支援顯示ISO 10816定義之震動規範顯示圖表底色
+>           5. [Add] 支援修改線條顏色、symbol、legend fornt等客製化配置
 
 ## **0.80.008 (2019-11-11)**
 > **[Bug Fix]**
