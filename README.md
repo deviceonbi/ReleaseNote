@@ -113,13 +113,13 @@
 >           + common
 >               + 处理文字溢出
 >               + 如果有多层弹框, cancel 按钮需要确认表示结束进程，点击确定将关闭底层所有弹框。
->        - [fix]
->                + group/organization 
+>       - [fix]
+>           + group/organization 
 >                + 英文語言編輯organization視窗上的標題文字為Edit Group
->                + object 
+>           + object 
 >                + select parameter
 >                + 默认选中的模板和参数不对应
->                + setup object
+>           + setup object
 >                + 从模板读取记录类型没有读取，保存为模板时记录类型没有保存
 >                + deadBand delayTime、restoreDelayTime、deadBandType 字段无法存储(alarm 组件JSON 有更新)
 >                + header 
