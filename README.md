@@ -72,58 +72,58 @@
 >       - [UI]
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
 >           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
->       - [new feature]
->           1. [New] group/organization 
+>       - [new feature]
+>           1. [New] group/organization
 >           2. [New] 修改建组织的操作流程:建组织第一步先选模板 可不选 
->           3. [New] 新建组织时创建默认物件，与组织同名;更新组织时同步更新默认Object 
->           4. [New] 修改语言切换bar位置 
->           5. [New] 添加头部引导条 
->           6. [New] 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值 
->           7. [New] worldmap template 添加清空按钮，可不填 
->           8. [New] 编辑模式下隐藏引导条 
->           + object 
->           + select parameter
->           + 界面新增 block type
->           + 默认展示的参数个数从10改到30
->           + parameter type 列添加筛选功能
->           + 选择模板添加清空按钮，可不选
->           + profile list 添加过滤，值显示public 或者当前用户自己建的profile
->           + select tag
->           + 修改操作按钮的图标
->           + setup object
->           + 编辑参数时，param name和rule name 不可修改, 修改param删除时候的确认提示 、 rule name 删除时候添加确认步骤
->           + from device 创建 object 时，来自区块的点保存为模板时参数名去掉区块的名字
->           +  新增object 时候将当前Object 的id 从'>           +1'改为 '@equipId'
->           + 计算公式里所有自定义函数存给后台时添加两个参数：当前的 orgid、objectid。用 @orgId 表示正在创建的group id,@equipId 表示正在创建的Object id
->           + 添加 calcFormulaDisplay 字段
->           + 修改 stateTxt 默认字段为'[[0,0],[1,1]]'
->           + 添加自定义函数的跳转页面
->           + 修改从profile 建object 时绑定设备时的取值逻辑：设备点config优先，如果设备config 参数值为空或者没有配置则取来自    profile 的值。
->           + save as profile 的 owner 统一转换为全小写
->           + 编辑模式下隐藏引导条
->           + home 新增 Home page 
->           + header 新增item：'home' 用于回到 home 页面
->           + organizationManagement 
->           + 锚点跳转时候展开相应的列表
->           + object list
->           + 新增 org./group 列
->           + 列出有权限的所有object(上一版本只展示当前组织的object)
->           + 显示默认object(包括子节点的默认object)
->           + 添加 view button(子组织的默认object父节点只有view 的权限)
->           + common
->           + 处理文字溢出
->           + 如果有多层弹框, cancel 按钮需要确认表示结束进程，点击确定将关闭底层所有弹框。
+>           3. [New] 新建组织时创建默认物件，与组织同名;更新组织时同步更新默认Object
+>           4. [New] 修改语言切换bar位置 
+>           5. [New] 添加头部引导条 
+>           6. [New] 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值 
+>           7. [New] worldmap template 添加清空按钮，可不填 
+>           8. [New] 编辑模式下隐藏引导条 
+>           + object 
+>           + select parameter
+>           + 界面新增 block type
+>           + 默认展示的参数个数从10改到30
+>           + parameter type 列添加筛选功能
+>           + 选择模板添加清空按钮，可不选
+>           + profile list 添加过滤，值显示public 或者当前用户自己建的profile
+>           + select tag
+>           + 修改操作按钮的图标
+>           + setup object
+>           + 编辑参数时，param name和rule name 不可修改, 修改param删除时候的确认提示 、 rule name 删除时候添加确认步骤
+>           + from device 创建 object 时，来自区块的点保存为模板时参数名去掉区块的名字
+>           +  新增object 时候将当前Object 的id 从'>           +1'改为 '@equipId'
+>           + 计算公式里所有自定义函数存给后台时添加两个参数：当前的 orgid、objectid。用 @orgId 表示正在创建的group id,@equipId 表示正在创建的Object id
+>           + 添加 calcFormulaDisplay 字段
+>           + 修改 stateTxt 默认字段为'[[0,0],[1,1]]'
+>           + 添加自定义函数的跳转页面
+>           + 修改从profile 建object 时绑定设备时的取值逻辑：设备点config优先，如果设备config 参数值为空或者没有配置则取来自    profile 的值。
+>           + save as profile 的 owner 统一转换为全小写
+>           + 编辑模式下隐藏引导条
+>           + home 新增 Home page 
+>           + header 新增item：'home' 用于回到 home 页面
+>           + organizationManagement 
+>           + 锚点跳转时候展开相应的列表
+>           + object list
+>           + 新增 org./group 列
+>           + 列出有权限的所有object(上一版本只展示当前组织的object)
+>           + 显示默认object(包括子节点的默认object)
+>           + 添加 view button(子组织的默认object父节点只有view 的权限)
+>           + common
+>           + 处理文字溢出
+>           + 如果有多层弹框, cancel 按钮需要确认表示结束进程，点击确定将关闭底层所有弹框。
 >        - [fix]
->        + group/organization 
->        + 英文語言編輯organization視窗上的標題文字為Edit Group
->        + object 
->        + select parameter
->        + 默认选中的模板和参数不对应
->        + setup object
->        + 从模板读取记录类型没有读取，保存为模板时记录类型没有保存
->        + deadBand delayTime、restoreDelayTime、deadBandType 字段无法存储(alarm 组件JSON 有更新)
->        + header 
->        + help里面的quick start 文字溢出
+>        + group/organization 
+>        + 英文語言編輯organization視窗上的標題文字為Edit Group
+>        + object 
+>        + select parameter
+>        + 默认选中的模板和参数不对应
+>        + setup object
+>        + 从模板读取记录类型没有读取，保存为模板时记录类型没有保存
+>        + deadBand delayTime、restoreDelayTime、deadBandType 字段无法存储(alarm 组件JSON 有更新)
+>        + header 
+>        + help里面的quick start 文字溢出
 > *  **Dataworker**
 >       - [Enhance]
 >           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
