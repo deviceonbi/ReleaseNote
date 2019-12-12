@@ -72,6 +72,7 @@
 >       - [UI]
 >           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
 >           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
+> *  **Org./Group && Object**
 >       - [new feature]
 >           + group/organization
 >               + [New] 修改建组织的操作流程:建组织第一步先选模板 可不选 
@@ -90,7 +91,7 @@
 >               + profile list 添加过滤，值显示public 或者当前用户自己建的profile
 >               + select tag
 >               + 修改操作按钮的图标
->               + setup object
+>           + setup object
 >               + 编辑参数时，param name和rule name 不可修改, 修改param删除时候的确认提示 、 rule name 删除时候添加确认步骤
 >               + from device 创建 object 时，来自区块的点保存为模板时参数名去掉区块的名字
 >               +  新增object 时候将当前Object 的id 从'>           +1'改为 '@equipId'
@@ -102,14 +103,14 @@
 >               + save as profile 的 owner 统一转换为全小写
 >               + 编辑模式下隐藏引导条
 >               + home 新增 Home page 
->               + header 新增item：'home' 用于回到 home 页面
->               + organizationManagement 
+>           + header 新增item：'home' 用于回到 home 页面
+>           + organizationManagement 
 >               + 锚点跳转时候展开相应的列表
->           + object list
->               + 新增 org./group 列
->               + 列出有权限的所有object(上一版本只展示当前组织的object)
->               + 显示默认object(包括子节点的默认object)
->               + 添加 view button(子组织的默认object父节点只有view 的权限)
+    >           + object list
+    >               + 新增 org./group 列
+    >               + 列出有权限的所有object(上一版本只展示当前组织的object)
+    >               + 显示默认object(包括子节点的默认object)
+    >               + 添加 view button(子组织的默认object父节点只有view 的权限)
 >           + common
 >               + 处理文字溢出
 >               + 如果有多层弹框, cancel 按钮需要确认表示结束进程，点击确定将关闭底层所有弹框。
@@ -122,7 +123,7 @@
 >           + setup object
 >                + 从模板读取记录类型没有读取，保存为模板时记录类型没有保存
 >                + deadBand delayTime、restoreDelayTime、deadBandType 字段无法存储(alarm 组件JSON 有更新)
->                + header 
+>           + header 
 >                + help里面的quick start 文字溢出
 > *  **Dataworker**
 >       - [Enhance]
