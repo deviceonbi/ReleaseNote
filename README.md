@@ -1,6 +1,6 @@
 # WISE.M+ Release Note
 ---
-### WISE.M+ v-0.85.001 (2020-07-??)
+### WISE.M+ v-0.85.001 (2020-07-07)
 
 #### Summary Update
 
