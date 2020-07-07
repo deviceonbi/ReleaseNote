@@ -1,5 +1,267 @@
 # WISE.M+ Release Note
 ---
+### WISE.M+ v-0.85.001 (2020-07-??)
+
+#### Summary Update
+
+* Support new SRP Dashboard - Distributed Equipment Operations 
+  * 1.1 Organization Overview
+  * 1.2 Building
+  * 2.1 Equipment Monitoring
+  * 2.2 Overall Efficiency
+  * 2.3 Maintenance Statistics
+  * 2.4 Vibration Analysis
+  * 2.5 Alarm Report
+* New Search UI in Profile Management.
+* Add share mode in Profile
+* New Share code Management in Profile Management. 
+* New Notification Sender UI in Organization Setting.
+* New Alarm User UI in Alarm User Group Setting.
+* Support new feature of sending test message in Notification Sender / Alarm User setting.
+* Integrate email / WeChat / Line notification functionalties in wise-mplus-notification microservice.
+* Remove WISE-PaaS Notification microservice.
+#### [Portal-WISE-MPlus]
+
+Updated:
+
+* Change the Recording Rate UI as a dropdown for fixing the recording rate to one of [1, 2, 3, 4, 5, 6, 10, 12, 15, 30，60, 120, 180, 240, 300, 360, 600, 720, 900, 1800, 3600] seconds.
+
+Fixed:
+
+* Change default port number of NBIoT device to 5683
+* [#18148] Portal crash while add an object with 5000 tags.
+#### [Portal Backend]
+
+Add:
+
+* Add system tag "#MSYS_EdgeStatus" in device.
+* Add cfgchange MQTT message for notifying the config change of Org./Object/Alarm Group /Alarm User Group/Notification Group/User Role /Group Authority
+
+Updated:
+
+* Remove the action of registration to WISE-PaaS Notification.
+
+Fixed:
+
+* The dashboard folder name of the suborganization was not updated when the organization name was updated
+#### [DataWorker]
+
+Fixed:
+
+* Save tag config from /cfg topic faild
+* Array tag connot resolve correctly
+#### [Archiver]
+
+Updated:
+
+* Improve the performance of accessing mongoDB
+* Align the save time of Historical data 
+* Fix the Recording Rate to one of [1, 2, 3, 4, 5, 6, 10, 12, 15, 30，60, 120, 180, 240, 300, 360, 600, 720, 900, 1800, 3600] seconds.
+#### [Datasource Backend]
+
+Added: 
+
+* Add simulation API (Equality Method / Interpolation Method) 
+
+Fixed:
+
+* [#20599] Datasource response with "unit" attribute will cause Graph Panel faild.
+#### [Panel / Datasource]
+
+Added:
+
+* Add simulation mode (Equality Method / Interpolation Method) for cumulatve parameter in datasource.
+
+Fixed:
+
+* [#20616] Water Statistic threshold setting error.
+* [#21190] EnE Alarm Panel cannot get user information in Dashboard 2.0.0
+
+[User Function]
+
+Updated:
+
+* Add retry delay when register functions failed. (1min -> 2 min -> 4 min -> 8 min -> 16min) (fix max. delay to 16 min)
+### WISE.M+ v-0.84.005 (2020-06-23)
+
+#### [Portal-WISE-MPlus]
+
+Updated:
+
+* Compatible with new version of Multistat and Water Statistic panel
+
+Fixed:
+
+* [#20971] Preview error on Dashboard (3.2 Biology System) created by SRPDashboard
+* [#20965] Cannot trigger alarm (Portal insert wrong tagname format into DB)
+* [Menu Management] Page info is invalid (no title...), but UI doesn't disable Button.
+#### [Dataworker]
+
+* [#20943] Calculation Parameter cannot display value on dashboard (calculation worked while SAVE setting again)
+#### [Notification]
+
+Updated:
+
+* Add log while notify-sendQueue not exist.
+
+Fixed:
+
+* [#20910] Cannot get WeChat Notification (cause by wrong rabbitmq queue creation)
+#### [Datasource Backend]
+
+Fixed:
+
+* The last value of HIS data will align to last Min/Hour/day/...
+* Fix display format of tagname field in alarmlog function.
+
+---
+
+
+### WISE.M+ v-0.84.004 (2020-06-10)
+
+#### [Portal-Wise-MPlus]
+
+Fixed:
+
+* [#20680] In 3.3 progress bar->Value Threshold & Color, Threshold setting does not match the actual situation 
+* [#20679] In 3.3 progress bar->Other Settings, shadow appear while mouse hover
+* [#20678] In 3.2 Multistat Panel->Value Threshold & Color, Threshold setting does not match the actual situation
+* [#20677] In 3.2 Singlestat Gauge Mode -> Value Threshold & Color, Threshold setting does not match the actual situation
+* [#20676] In 3.1 Monitor->Center-Status->Value Threshold & Color cannot save while not threshold setting in manual mode.
+* [#20671] In 1.2 group bar chart, should hide time-range setting on Panel.
+* [#20631] In 2.1 Object Monitoring, wrong unit of Running time & health Situation
+* [#20629] In 2.1 Object Monitoring, cannot change column header
+* [#20601] In 1.1 EnE world map，use UTC time to display alarm time (should use local time)
+* [#20535] [Login] "Request failed" error message occur while first login
+* User without system admin authority can enter system setting by typing URL
+* Wrong display while no serach result in Device Tag Info
+* Cannot create object form profile porperly(lack of Alarm rule) while use "category" to filter the profile.
+#### [Portal Backend]
+
+Fixed:
+
+* Lake of the authority of editor/viewer while creating dashboard folder. Will cause the annonymous User cannot view dashbaord
+#### [Data Worker]
+
+Fixed:
+
+* [#20546] WebAccess already stop SCADA，but WISE.M+ still shows online.
+#### [Archiver]
+
+Fixed:
+
+* Connect mongodb with session
+* Sepatate the process of discrete data processing and padding data.
+#### [Alarm Service]
+
+Fixed: 
+
+* GET Realtime Alarm API faild due to wrong remove of alarm config
+* Fix bug of restore data from mongodb to redis
+* Filter out system alarm from normal alarm.
+* [#20581] Did not remove rtalarm properly while disable alarm.  
+#### [User Function]
+
+Fixed:
+
+* [#20591] Did not process the case of duplicate parameter in getGroupParamSum function
+#### [Notification]
+
+Fixed:
+
+* Revise the mechanism of IoT-Hub queue reconnect and rebuild.
+#### [Datasource backend]
+
+Updated:
+
+* Zero-padding data in "groupStatusDuration" / "groupStatusOccurrence" function
+* Comptable with WISE-PaaS Dashboard 2.0.0 panel type
+
+
+---
+
+
+### WISE.M+ v-0.84.003 (2020-05-14)
+
+#### [Portal-Wise-MPlus]
+
+Fixed:
+
+* [#20374] Cannot save object while set the parameter number same as license number.
+* [#20380] While click on the wording "SRP Dashboard", it should fold / unfold the SRP Dashboard menu.
+* [#20389] Cannot configure 1.1 Organization Overview while the user's role is "Engineer".
+* [#20390] Engineer Unit wording.
+* [#20391] Panel title setting did not take effect.
+* [#20397] Missing value of calculation Parameter. 
+* [#20398] Abnormal value of calculation Parameter with Discrete type.
+* [#20399] Cannot set parameter name in World Map Card Template Management.    
+* [#20401] User with operator/viewer role can add existing device
+#### [Alarm Service]
+
+Fixed:
+
+* [#20439] Lake of initial state of alarm record. May cause Ene Alarm Panel's error message    
+#### [Panel]
+
+Fixed:
+
+* [#20440] [Ene Alarm panel] Missing display of Alarm Statistic
+#### [Dataworker]
+
+Fixed:
+
+* Check PostgreSQL.isValid() may cause thread lock.
+* Load taginfo faild while the length of number is too long. May stop the thread of updating Rawdata.
+#### [api-org-wise-mplus]
+
+Fixed:
+
+* Fix MongoDB / PostgreSQL connection error.   
+* Periodically clear legacy data in Redis
+#### [Archiver]
+
+Fixed: 
+
+* Fix incorrect statistics of min / hour data of discrete parameter.
+
+---
+
+
+### WISE.M+ v-0.84.001 (2020-04-23)
+
+#### Summary Update
+
+* [New] Support SRP Dashboard - Smart Water solution
+  * 1.1 Organization Overview
+  * 1.2 Single Factory Overview
+  * 2.1 Object Monitoring
+  * 2.2 Availability
+  * 3.1 Inflow pumping station
+  * 3.2 Biology System
+  * 3.3 Membrane Bioreactor System
+  * 3.6 Water Quality
+  * 4.1 Alarm Report 
+#### [Portal-Wise-MPlus]
+
+Added:
+
+* SRP Dashboard - Smart Water solution
+
+Updated:
+
+* Enhance UI for creating Object from device with 5000 or more tags. 
+#### [Dataworker]
+
+Updated:
+
+* Reduce log messages.
+* Reduce MongoDB operation while checking device online/offline state.
+#### [Archiver]
+
+Fixed:
+
+* [#18436] M+ cannot get the data while ECU(Edgelink) resumes from break-point
+
 
 ## **0.82.002 (2020-3-17)**
 > *  **Data archiver**
