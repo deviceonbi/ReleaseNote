@@ -1,5 +1,97 @@
 # WISE.M+ Release Note
 ---
+### WISE.M+ v-0.85.003 (2020-08-06) 
+
+#### [Portal-WISE-MPlus] 
+
+Updated: 
+
+
+* Trim the space char of your pasted information, such as WeChat ID and Emails, etc. 
+
+Fixed: 
+
+
+* Forget password URL error; 
+* After Change Password, URL error; 
+* The sytle of the UI 
+### [Archiver] 
+
+Fixed: 
+
+
+* Digital Tags update DB each time limited to 100; 
+* Digital Tags the first record, and update the duration time; 
+* Object/Parameters with Current Type, missing one record; 
+### [Datasource backend] 
+
+Fixed: 
+
+
+* Tags with just one record; 
+
+Updated: 
+
+
+* Completion internal data of Digital tag; 
+
+---
+
+
+### WISE.M+ v-0.85.002 (2020-07-31) 
+
+#### [Portal-WISE-MPlus] 
+
+Fixed: 
+
+
+* [#21508][Alarm Group] Cannot get alarm rule information while adding second alarm group. 
+* [#21518][Profile] Not refresh page while add / delete share code in "Manage Shared Codes" dialog. 
+* [#21536][Profile] Wrong number of profiles in Search drop-down menu. 
+* [#21543][#21580][#21586][Object] Minor UI Fixed. 
+* [#21548][#21615][#21623][SRPDashboard] Default dashboard template updated. 
+* [#21552][Org][Group] Sync setting between multiple langage while add org and object 
+* [#21553][Dashboard] Cannot change language in SRPFrame (Fix in Dashboard 2.0.4) 
+* [#21554][Device] Device tag number did not change while changing the number of tag in edge device. 
+* [#21570][License] Still can add object / parameter while downgrade the total number of license. 
+* [#21571][Object] Cannot use shared profile while add object from profile. 
+* [#21590][Profile] Empty calculation formula while import profile by Excel. 
+* 
+### [Portal backend] 
+
+Updated: 
+
+
+* Change MQTT QoS to 2 
+### [Alarm Service] 
+
+
+* [#21591]  When the user deletes the corresponding object, RTAlarm has not been deleted 
+### [Data Worker] 
+
+Updated: 
+
+
+* System tag "#MSYS_EdgeStatus" can be recorded in rawdata 
+
+Fixed: 
+
+
+* May not delete tag properly while receiving tagDelete message from Portal backend. 
+* [21523] While creating object from profile, some calculation parameter with "TotalObjects" function may not work properly. 
+### [Archiver] 
+
+Fixed: 
+
+* [#21531] Did not generate hour data properly after an hour. 
+### [Datasource backend] 
+
+Updated: 
+
+
+* Display the his data of digital parameter in square wave. 
+* Make sure the first value's timestamp of Hour/day/week/month/year data is on the hour. 
+---
 ### WISE.M+ v-0.85.001 (2020-07-07)
 
 #### Summary Update
