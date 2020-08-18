@@ -1,5 +1,85 @@
 # WISE.M+ Release Note
 ---
+### WISE.M+ v-0.86.001 (2020-08-18) 
+
+#### Summary Update 
+
+
+* [New] Dashboard Designer - easy to create your dashboard in WISE.M+ 
+    * Drag n drop to modify your dashboard layout. 
+    * Easy to bind your object parameter into data visualization. 
+    * Support 20+ Panels of Dashboard. 
+    * Support Preview dashboard while you are editing. 
+* [New] DBMaster - WISE.M+'s Data Provider service. 
+    * Provide GraphQL API for WISE.M+ configuration data 
+    * Provide /data/autoscale API for auto-scaled historical data. 
+    * Provide Historical data APIs. 
+    * Built-in cache mechanism to improve performance. 
+#### [Notification] 
+
+Updated: 
+
+
+* Integrate Message compose function with DBMaster APIs. 
+#### [User Function] 
+
+Updated: 
+
+* Integrate GetGroupParamSum function with DBMaster APIs. 
+### [Datasource backend] 
+
+Updated: 
+
+
+* Integrate Org/Object/Parameter List with DBMaster APIs. 
+* Integrate His data with DBMaster autoscale API. 
+### [Portal] 
+
+Updated: 
+
+
+* Add "Short Name" Column in Parameter List of Profile. 
+* Allow to display an organization / Object setting page directly by adding query string into URL. 
+
+Fixed: 
+
+
+* [#21843] Cannot set alarm of Text Parameter. 
+* [#21937] Device tag list paging issue. 
+### [Portal backend] 
+
+Updated: 
+
+
+* Improve the performance of edge/status API. 
+* Modify tagAdd MQTT message format. 
+### [Dataworker] 
+
+Updated: 
+
+
+* While Device online/offline, dataworker will add a record for each tag of the device into RawData. 
+* Change the strategy of device offline determination from 5 min. to device's heart beat time. 
+* Can handle tagAdd /tagUpdate mqtt message instead of DB Query. 
+
+Fixed: 
+
+* [#21894] Didn't update value after finishing the calculation of calculation parameter. 
+### [Archiver] 
+
+Updated: 
+
+* Record Online/Offline infomation by quality and ensure each recording rate, each parameter has only 1 record in His table. 
+* Code refactor and performance improvment. 
+### [Panel] 
+
+Fixed: 
+
+* [#21172][ene-controller-switch-panel] Permission denied while changing value. 
+* [circuit-status-panel] default align picture position to center. 
+
+---
+
 ### WISE.M+ v-0.85.003 (2020-08-06) 
 
 #### [Portal-WISE-MPlus] 
