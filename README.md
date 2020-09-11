@@ -1,7 +1,7 @@
 # WISE.M+ Release Note
----
 
-* WISE.M+ v-0.86.002 (2020-09-11)
+### WISE.M+ v-0.86.002 (2020-09-11)
+
 #### [Portal-WISE-MPlus]
 
 Fixed:
