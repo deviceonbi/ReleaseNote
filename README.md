@@ -3,25 +3,35 @@
 
 * WISE.M+ v-0.86.002 (2020-09-11)
 #### [Portal-WISE-MPlus]
+
 Fixed:
-* [#22216]: 設定計算點的公式內的代碼來源，格式亂掉
-* [#22219]: 儀表單下拉選單，翻譯錯誤
-* [#22221]: [Notification Message] 訊息Alarm Mode內容有錯
-* [#22222]: 計算點FlowInSum沒有值
-* [#22229]: 從設備新增obj，顯示錯誤
-* [#22240]: 在儀表板名單去create new，有些panel的語系有問題
-* [#22242]: 在儀表板名單去create new，preview失敗
-* [#22243]: Grouped Bar Chart Panel無法顯示資料
-* [#22249]: object monitor panel在column顯示錯誤
-* [#22251]: water statistic panel內，yesterday沒有資料
-* [#22264]: [Profile management] 建立string parameter，Recording data欄位設定異常
-* [#22275]: 在profile內夾帶警報代碼xls，會上傳失敗
+
+* [#22216] 設定計算點的公式內的代碼來源，格式亂掉
+* [#22219] 儀表單下拉選單，翻譯錯誤
+* [#22221] Notification Message 訊息Alarm Mode內容有錯
+* [#22222] 計算點FlowInSum沒有值
+* [#22229] 從設備新增obj，顯示錯誤
+* [#22240] 在儀表板名單去create new，有些panel的語系有問題
+* [#22242] 在儀表板名單去create new，preview失敗
+* [#22243] Grouped Bar Chart Panel無法顯示資料
+* [#22249] object monitor panel在column顯示錯誤
+* [#22251] water statistic panel內，yesterday沒有資料
+* [#22264] Profile management 建立string parameter，Recording data欄位設定異常
+* [#22275] 在profile內夾帶警報代碼xls，會上傳失敗
+
 ### [Portal backend]
-* [#22239]: 在portal刪除dashboard，但在grafana卻沒刪除成功
-* [Fixed]: 兼容webaccess清除白名单后config里面没有'Device'也没有'Tag'结构的情况
+
+Fixed:
+
+* [#22239] 在portal刪除dashboard，但在grafana卻沒刪除成功
+* [Fixed] 兼容webaccess清除白名单后config里面没有'Device'也没有'Tag'结构的情况
+
 ### [Dataworker]
-* [#22233]: Device斷線，但quality資料錯誤
-* [Enhance]: 处理 tagAdd 消息时，由每次计算和保存一个tag改为计算完毕后批量保存
+
+Fixed:
+
+* [#22233] Device斷線，但quality資料錯誤
+* [Enhance] 处理 tagAdd 消息时，由每次计算和保存一个tag改为计算完毕后批量保存
 
 ---
 ### WISE.M+ v-0.86.001 (2020-08-18)
