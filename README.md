@@ -16,7 +16,7 @@ Fixed:
 
 * [#22334] Quality function- #MSYS_EdgeStatus的quality值異常
 * [#22335] Quality function- tag 没有绑定到 parameter，所以worker不處理
-* [#22339] 上傳isensing device到WISE.M+，只有看到MSYS_EdgeStatus是online，其他tag都沒看到
+* [#22339] 上傳isensing device到WISE.M+，只有看到MSYS_EdgeStatus是online，其他tag未见上传，该问题在0.90.001修正，0.86.003暂时作为已知问题不验证
 
 ---
 
