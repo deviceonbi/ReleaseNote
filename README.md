@@ -1,5 +1,25 @@
 # WISE.M+ Release Note
 
+### WISE.M+ v-0.86.003 (2020-09-23)
+
+#### [Portal-WISE-MPlus]
+
+Fixed:
+
+
+* [#22356] object內夾帶警報代碼xls，在使用save as profile，xls會上傳失敗
+* [#22374] water statistic panel沒有資料
+
+### [Dataworker]
+
+Fixed:
+
+* [#22334] Quality function- #MSYS_EdgeStatus的quality值異常
+* [#22335] Quality function- tag 没有绑定到 parameter，所以worker不處理
+* [#22339] 上傳isensing device到WISE.M+，只有看到MSYS_EdgeStatus是online，其他tag都沒看到
+
+---
+
 ### WISE.M+ v-0.86.002 (2020-09-11)
 
 #### [Portal-WISE-MPlus]
