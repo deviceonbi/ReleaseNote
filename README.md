@@ -1,5 +1,27 @@
 # WISE.M+ Release Note
 
+### WISE.M+ v-0.90.001 (2020-09-24)
+
+#### [Portal-WISE-MPlus]
+
+New:
+
+* Add [Trial] features
+
+### [Dataworker]
+
+New:
+
+* remove the calculation module to evaluator
+
+### [Evaluator]
+
+New:
+
+* Move the calculation module from Dataworker to evaluator
+
+---
+
 ### WISE.M+ v-0.86.003 (2020-09-23)
 
 #### [Portal-WISE-MPlus]
