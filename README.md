@@ -1,5 +1,21 @@
 # WISE.M+ Release Note
 
+### WISE.M+ v-0.90.002 (2020-10-19)
+
+#### [API-Portal-WISE-MPlus]
+
+Fixed:
+
+* [#22632] 上傳isensing device到M+，但點計數卻是0
+
+### [Alamr Service]
+
+Fixed:
+
+* Fixed the bug of alarm filter
+
+---
+
 ### WISE.M+ v-0.90.001 (2020-09-24)
 
 #### [Portal-WISE-MPlus]
