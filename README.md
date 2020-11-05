@@ -1,18 +1,33 @@
 # WISE.M+ Release Note
 
-### WISE.M+ v-0.90.002 (2020-10-19)
+### WISE.M+ v-0.90.002 (2020-11-05)
 
 #### [API-Portal-WISE-MPlus]
 
 Fixed:
 
-* [#22632] 上傳isensing device到M+，但點計數卻是0
+* [#22632] 上傳isensing device到M+，但點計數卻是0;
+
+#### [Portal-WISE-MPlus]
+
+Fixed:
+
+* [#22669] Org內的object排版異常;
+* [#22701] M+上的org都刪除了，但rabbitmq還是有收到valchg的資料;
 
 ### [Alamr Service]
 
 Fixed:
 
-* Fixed the bug of alarm filter
+* Fixed the bug of alarm filter;
+* [#22646] 新增樣板儀表板，其中和alarm有關的dashboard，無法正常顯示資料;
+
+#### [WISE-MPlus-Worker]
+
+Fixed:
+
+* [#22701] M+上的org都刪除了，但rabbitmq還是有收到valchg的資料;
+
 
 ---
 
