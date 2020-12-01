@@ -1,5 +1,22 @@
 # WISE.M+ Release Note
 
+### WISE.M+ v-0.90.003 (2020-12-01)
+
+#### [Dashboard Plugin]
+
+Fixed:
+
+* [#23026] 使用template建立1.1 Organization Overview Water dashboard，然後觸發alarm，但dashboard卻沒顯示alarm;
+* [#23046] 使用template建立dashboard，有使用到Grouped Bar Chart Panel顯示異常
+* [#23050] 在3.1 Inflow pumping station，切換object，Water Flow In-Out Panel都顯示N/A
+#### [Portal-WISE-MPlus]
+
+Fixed:
+
+* [#23047] 使用profile(AutoTest_Profile)建立object後，object內沒有設定alarm， 但topic(valchg)卻收到資料;
+
+---
+
 ### WISE.M+ v-0.90.002 (2020-11-05)
 
 #### [API-Portal-WISE-MPlus]
