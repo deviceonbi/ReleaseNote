@@ -1,3 +1,19 @@
+# DeviceOn/BI v-1.00.003 (2020-12-17)
+
+[API-Portal]
+
+Fixed all test bugs;
+
+[Portal]
+
+1. Support 3 scenarios: device management , trail, subscriptionmode;
+
+[MyDevices]
+
+1. MyDevice relatived micro-service update to version 1.00.003
+
+---
+
 # DeviceOn/BI v-1.00.002 (2020-12-07)
 
 #### [Dashboard Plugin]
