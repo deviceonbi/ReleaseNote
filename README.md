@@ -136,10 +136,15 @@ Use Object setting (days to keep Min / Other data) & parameter setting (days to 
     * [Add] Delete Historical data (min/hour/day/week/month/year) by object
     * [Add] Delete Historical data (min/hour/day/week/month/year) by parameter
 6. [Add] MyDevice relatived micro-service
-|**api-dm**|API Support for DeviceON/BI Device Configuration, FOTA, COTA|
-|**portal-manage**|Management Portal for Define Device Model Profile|
-|**api-manage**|API Support for Management Portal|
-|**mqtt-proxy**|MQTT+SSL Proxy for DeviceON/BI Portal to Monitor Real Time Data|
-|**device-config**|Handle Device Configuration, FOTA, COTA Command by MQTT|
+|**api-dm**|
+|API Support for DeviceON/BI Device Configuration, FOTA, COTA|
+|**portal-manage**|
+|Management Portal for Define Device Model Profile|
+|**api-manage**|
+|API Support for Management Portal|
+|**mqtt-proxy**|
+|MQTT+SSL Proxy for DeviceON/BI Portal to Monitor Real Time Data|
+|**device-config**|
+|Handle Device Configuration, FOTA, COTA Command by MQTT|
 
 
