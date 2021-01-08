@@ -1,3 +1,38 @@
+# DeviceOn/BI v-1.00.005 (2021-1-8)
+
+[Portal]
+
+Fixed all test bugs;
+* [#23549] 畫面出現WISE.M+	
+* [#23562] 父層和子層org，在顯示dashboard list有異常	
+* [#23563] Dashboard New From Existing沒有顯示dashboard	
+* [#23564] 編輯已存在的dashboard後，下次點選new from Existing就會爆掉	
+* [#23565] 新增object from device，我選擇scada上傳的所有tag，有501個，但卻只有500個	
+* [#23566] 新增object from device，我選擇adam上傳的所有tag，有16個，卻只有看到12個	
+* [#23571] 在grafana增加資料夾和dashboard，但從new from existing，沒看到新增的資料夾	
+* [#23575] Monitor選擇Analog Input分頁，AI的部分應該置頂	
+* [#23576] WISE device有12個tag，但tag list的分頁總數卻只有1	
+* [#23577] 新增一個空的org，然後在底下增加一個空的child org，但看到child org的parameter count是8
+* [#23618] Adam 6000沒有支援Firmware OTA和Configuration OTA，但卻可以使用	
+* [#23619] WISE 4012E內的Configuration設定，可以設定Enable Burnout Fcn和Burnout Scale Mode
+* [#23620] My Devices 勾選device數量異常	
+* [#23622] 從My Devices，使用copy to my org，但在object內看到Recording Rate是1秒	
+* [#23643] 使用copy to my org，在object內看到Recording Rate是1秒，到dashboard查看歷史資料，卻是空的	
+* [#23644] 刪除設備的提示訊息內 有錯字	
+* [#23646] 刪除設備點參數的提示訊息內，有部分變成簡體	
+* [#23671] 上傳UNO，點選monitor，在總覽分頁會一直出現error	
+* [#23697] Adam 6060內的Configuration設定，當DO channel設定成不同mode，在切換channel後，會要求設定資料，無法save或dispatch
+* [#23732] WISE 4012E內的Configuration設定Analog Input/Common Settings，有二個異常
+* [#23733] WISE 4012E內的Configuration設定Analog Input/Common Settings，修改Average Channel Setting設定，卻save fail
+* [#23734] WISE 4012E內的Configuration設定Analog Input/Channel Settings，總覽沒有資料
+* [#23735] WISE 4012E內的Configuration設定Digital Output，切換channel後，會要求設定Low/High to High Delay Time，導致無法save
+
+[MyDevices]
+
+1. MyDevice relatived micro-service update to version 1.00.005
+
+---
+
 # DeviceOn/BI v-1.00.003 (2020-12-17)
 
 [API-Portal]
