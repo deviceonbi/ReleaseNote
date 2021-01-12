@@ -1,4 +1,6 @@
-# DeviceOn/BI v-1.00.005 (2021-1-8)
+# DeviceOn/BI Release Note
+---
+## DeviceOn/BI v-1.00.005 (2021-1-8)
 
 [Portal]
 
@@ -33,7 +35,7 @@ Fixed all test bugs;
 
 ---
 
-# DeviceOn/BI v-1.00.003 (2020-12-17)
+## DeviceOn/BI v-1.00.003 (2020-12-17)
 
 [API-Portal]
 
@@ -49,7 +51,7 @@ Fixed all test bugs;
 
 ---
 
-# DeviceOn/BI v-1.00.002 (2020-12-07)
+## DeviceOn/BI v-1.00.002 (2020-12-07)
 
 #### [Dashboard Plugin]
 
@@ -67,7 +69,7 @@ Fixed:
 ---
 
 
-# DeviceOn/BI v-1.00.001 (2020-12-07)
+## DeviceOn/BI v-1.00.001 (2020-12-07)
 
 #### [ALL]
 
@@ -108,8 +110,8 @@ Three kinds of user scenarios in iiot-operated Edition
 
 **Organization**
 
-4. [Change] Org.’s functional items from waterfall to tabs
-5. [Add] Inspection
+1. [Change] Org.’s functional items from waterfall to tabs
+2. [Add] Inspection
     * Each root org have one inspection site.
     * While trial/subscription Org. created, DeviceOn/BI creates a K8S namespace for installing Inspection pod.
         * Namespace naming rule : inspection<orgId>
@@ -120,8 +122,8 @@ Three kinds of user scenarios in iiot-operated Edition
     * BI Portal embed inspection portal by iframe.
     * While add / modify / unbind Org.’s users, BI will also add/modify/disable the corresponding inspection users.
     * Delete inspection pod & namespace while this org is being deleted.
-6. [Change] Move “Alarm Group” function into “Event” tab
-7. [Change] Move “User Group” / “Notification Group” functions into “Notification” tab
+3. [Change] Move “Alarm Group” function into “Event” tab
+4. [Change] Move “User Group” / “Notification Group” functions into “Notification” tab
 
 **Objects**
 
@@ -140,7 +142,8 @@ Three kinds of user scenarios in iiot-operated Edition
 
 [New micro service]
 
-3. [Add] Support packing MongoDB data into Azure blob
+1. [Add] Data Packer micro-service
+  * Support packing MongoDB data into Azure blob
     * rawdata
         * Pack to /datapacker/Rawdata/(objId%10)/(objId)-(parameterName)/timestamp.csv
         * Timestamp = 00:00:00 UTC of each day
@@ -161,32 +164,26 @@ Three kinds of user scenarios in iiot-operated Edition
         * Pack to /datapacker/Day/(objId%10)/(objId)-(parameterName)/timestamp.csv
         * Timestamp = 01/01 00:00:00 UTC of each year
         * 1 file per year per parameter
-4. [Add] Data Packer micro-service
-    * trigger “DELETE mongoDB data” message to Data Cleaner
-        * With blob address configuration
+  * trigger “DELETE mongoDB data” message to Data Cleaner
+      * With blob address configuration
+          - Rawdata: delete data before 5 days ago
+          - Min data: delete data before 7 days ago
+          - Hour / Day : delete data before 45 days ago
 
-Rawdata: delete data before 5 days ago
-
-Min data: delete data before 7 days ago
-
-Hour / Day : delete data before 45 days ago
-
-        * Without blob address configuration (standard version)
-
-Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
-
-    * Clear Blob by user’s setting
-        * Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
-    * Get Data APIs (internal use)
-    * Update data APIs for data resuming (internal use)
-5. [Add] Data Cleaner micro-service
+      * Without blob address configuration (standard version)
+          - Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
+  * Clear Blob by user’s setting
+      * Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
+  * Get Data APIs (internal use)
+  * Update data APIs for data resuming (internal use)
+2. [Add] Data Cleaner micro-service
     * [Add] Delete RAWData by drop collection
     * [Add] Delete RAWData by parameter
     * [Add] Delete data (deviceInfo / rtdata / rawdata) by Device
     * [Add] Delete data (tagInfo / rtdata / rawdata) by tag
     * [Add] Delete Historical data (min/hour/day/week/month/year) by object
     * [Add] Delete Historical data (min/hour/day/week/month/year) by parameter
-6. [Add] MyDevice relatived micro-service
+3. [Add] MyDevice relatived micro-service
     * [Add] api-dm
       API Support for DeviceON/BI Device Configuration, FOTA, COTA
     * [Add] portal-manage
