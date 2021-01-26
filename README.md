@@ -1,4 +1,28 @@
 # DeviceOn/BI Release Note
+
+## DeviceOn/BI v-1.00.006 (2021-1-26)
+
+[Portal]
+
+Fixed all test bugs;
+
+* [#23792] 在子層(11)可以看到3個dashboard，再去點org path的父層(00)，但dashboar資料沒有更新
+* [#23813] 4012E_157_0112這個設備是連線中，但卻左邊圖像卻是紅燈
+* [#23814] 語系設定出現空白
+* [#23818] WISE 4012E內的I/O Channel，parameter name的前面有6
+* [#23820] 新增org出現error，也沒有出現同名的object
+* [#23827] 新增uno設備，輸入mac，按生成，再去按test connection，卻出現error
+* [#23828] 新增TPC設備，但沒有地方可以設定型號，mac也不能輸入
+* [#23839] 上傳adam 6060，ch1是counter mode，Min Low/High Signal Width和adam utility顯示不一致
+* [#23841] 從device建立object，但scada設備可以上傳的tad只剩1個
+* [#23852] 從My Devices，使用copy to my org，沒有判斷Parameter Quota
+* [#23853] 設定Notification Message格式跑掉
+* [#23854] 在System Settings > Advanced Setting > System Notification > Wechat，設定完後，按save，畫面一直停在loading
+* [#23855] enable/disable Notification Groups狀態，彈出的通知內容空格很大
+
+[MyDevices]
+
+1. MyDevice relatived micro-service update to version 1.00.006
 ---
 ## DeviceOn/BI v-1.00.005 (2021-1-8)
 
