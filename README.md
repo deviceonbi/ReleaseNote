@@ -4,14 +4,14 @@
 
 [Portal]
 
-Fixed all test bugs;
+Fixed all test bugs：
 
 * [#24114] 在edgelink的device，用copy to my org，但object裡面只有1個parameter，修改为edgelink/webaccess scada 不支持copy to my org，需要到组织里用自行创建，会弹出如下消息：“Copy to My Organization does not support SCADA or EdgeLink. Please use Add New Object function in target organization.”
 * [#24115] 修正新增profile，加入一個parameter，但recording rate預設是1分鐘
 * [#24125] 修正從My Devices，使用copy to my org，當Parameter Quota超過，出現的error異常
 * [#24126] 在Home page的左上角汉堡包按鈕，但點下去也沒反應
 
-Update Lists；
+Update Lists：
 
 * 设备上线状态点 EdgeStatus状态修正
 * system setting样式修正，license显示creator栏位，去掉超出total quota的校验，修正错误信息覆盖右侧表格的问题，改为表头显示；
@@ -26,13 +26,13 @@ Update list;
 
 [ Data Worker]
 
-Update list;
+Update list：
 
 * 已完成 CfgChange 通知和 UeD 延迟处理测试和修正;
 
 [ Data Archiver]
 
-Update list;
+Update list：
 
 * 调整删除ene_tmpdata*_dailybak数据的时间，由固定凌晨3点改为每6小时删除一次，每次保留最近24小时的数据，目的为避开测试空间自动部署的时间；
 
