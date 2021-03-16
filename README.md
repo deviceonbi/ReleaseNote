@@ -1,6 +1,63 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.00.008 (2021-03-16)
 
-## DeviceOn/BI v-1.00.007 (2021-3-3)09
+[Portal]
+
+Fixed all test bugs：
+
+* [#24223] 語系改成繁中，alarm group內的參數設定，卻是空的
+* [#24230] 刪除報警用戶群組，再新增，會殘留舊資料
+* [#24281] parameter的報警功能無法關閉
+* [#24283] org內的Notification，使用測試email，會出現error
+* [#24293] 新增org，有出現error，parameter en cannot be null or undefined
+
+Update Lists：
+
+* [Fix] Parameter description輸入單引號會無法儲存
+* [Fix] Menu Management create/delete srpframe 時帳號認證失敗
+* [Fix] ADAM-6060 configuration issue
+* [Fix] Group bar chart - 當laft/right Y軸第一個Parameter的data type不是digital時, 隱藏decimals tooltip
+* [Fix] 開通帳號激活码添加校验，A-Z 0-9 16位
+* [Fix] 刪除device時, 殘留Model type在filter中
+* 
+New features:
+
+* [New] Enable create TPC Device
+* [New] SRDDashboard新增Graph類型
+* [New] LoRa device downlink feature
+* [New] Archiving功能 - 快速設定Object / parameter資料保留策略與時間
+
+
+[Portal Backend]
+
+Update list：
+
+* [Fix] 修改 notification url 为 service格式
+  
+
+[Data Archiver]
+
+Update list;
+
+* [Fix] 修改 scheduler 中任务调度部分，解决 task 一直占着 timer 的问题
+
+[Datasource API]
+
+Update list:
+
+* [Fix] 修復Dashboard寫值異常問題
+
+[DBMaster]
+
+Update list:
+
+* [Fix] 因帳號大小寫問題導致無法拿到authstring, 改為全面使用lowercase
+
+New features:
+
+* [New] add graphql mutation to set parameter RT data
+---
+## DeviceOn/BI v-1.00.007 (2021-3-3)
 
 [Portal]
 
