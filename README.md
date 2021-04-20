@@ -1,5 +1,68 @@
 # DeviceOn/BI Release Note
-## DeviceOn/BI v-1.00.008 (2021-03-16)
+## DeviceOn/BI v-1.00.009 (2021-04-20)
+
+### [Portal] ###
+
+Bug Fix：
+
+* [#24648] 在DM功能的Devices翻頁，查詢tag #MSYS_EdgeStatus，#符號搜尋不起作用
+* [#24571] Advanced Setting - Role功能可以設定Device Configuration權限，但目前所有人都可以新增Device
+* [#24569] User Management - filter功能異常
+* [#24548] 註冊新帳號，繁中語系的按鈕翻譯錯誤
+* [#24541] Profile Mangement新增profile，上傳alarm code xls，按save後會出現error
+* [#24540] 從既有儀表板新增dashboard，然後刪除dashboard後，再新增，會導致畫面異常
+* [#24539] 新增空白儀表板，加入圖表6個panel，但Water Achieving Rate panel會顯示NA
+* [#24536] 上傳WISE 4051的Configuration設定COM，在Slave Response Timeout和Delay Between Polls顯示error提示異常
+* [#24520] 上傳WISE 4051的Configuration設定COM，在Stop Bit顯示異常
+* [#24484] Notification Message 訊息內容部分有錯(文字點)
+* [#24483] Dashboard Panel : Avg.Availability / Running time of whole plant 兩個值顯示異常
+* [#24446] 新增LoRa設備，再刪除，就無法再增加原本設備
+* [#24407] 設定parameter的最大變化率 / 分鐘為100，然後SAVE AS PROFILE，但在profile看到的最大變化率 / 分鐘卻是1
+* [#24402] 連切換通知和事件，有時會沒顯示通知的資料
+* [Fix] 解决从home点击object dashboard，界面loading不停止bug
+* [Fix] 修正修改优化代码用户对组织没有权限/组织过期tabList启用和禁用功能导致的bug(org畫面loading不停止)
+* [Fix] Org List權限顯示修正
+  * 用户对于没有权限的org解开权限，tabList要打开disabled。
+  * subscribe org过期，重启成功打开disabled。 
+  * 跳转到过期的subscribe org，要disabled tabList。
+  * 删除org要看用户有没有权限判断展开还是禁用tabList。
+ 
+Update Lists：
+
+* [Update] Archiving畫面優化
+  * 支援批次調整recording rate
+* [Update] Object畫面優化
+  * 支援從Object List內的Organization名稱連結，快速跳轉到該組織
+* [Update] DM 調整 Downlink Command History 的 table 不使用樹狀結構顯示多筆 payload 資料，僅顯示總和資訊
+
+   
+### [Worker] ###
+Bug Fix:
+* [Fix] isensing 设备发送 cfg 数据后会先删除所有已有的 tag，然后再一个一个加回来。
+* [Fix] 修正了设备发生 UeD 离线后 Redis 中 quality 不更新问题。
+* [Fix] Mongodb.deviceInfo.active 的值经常发生错误的问题。改为将 active 和 activetime 一起更新。
+  
+### [Data Archiver] ###
+
+Bug Fix:
+
+* [Fix] 状态点min数据统计，若原始資料只有一筆，沒有每個recording rate算一筆數據進去資料庫，造成無數據
+
+### [Datasource API] ###
+
+Update list:
+
+* [Update] 更新 get duration/occurrentnumber history data 的 dbmaster api
+* [Update] 修改 duration his data 补数据时，按 parameter recording rate为 interval
+
+### [DBMaster] ###
+
+Bug Fix:
+
+* [Fix] DBMaster補的數據也被加入了cache造成Dashboard顯示異常
+* [Fix] Digital資料秒數加總，沒有考慮狀態，造成每個狀態算出來的值都相同
+
+ ## DeviceOn/BI v-1.00.008 (2021-03-16)
 
 [Portal]
 
