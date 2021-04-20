@@ -1,458 +1,289 @@
-# WISE.M+ Release Note
+# DeviceOn/BI Release Note
+## DeviceOn/BI v-1.00.008 (2021-03-16)
+
+[Portal]
+
+Fixed all test bugs：
+
+* [#24223] 語系改成繁中，alarm group內的參數設定，卻是空的
+* [#24230] 刪除報警用戶群組，再新增，會殘留舊資料
+* [#24281] parameter的報警功能無法關閉
+* [#24283] org內的Notification，使用測試email，會出現error
+* [#24293] 新增org，有出現error，parameter en cannot be null or undefined
+
+Update Lists：
+
+* [Fix] Parameter description輸入單引號會無法儲存
+* [Fix] Menu Management create/delete srpframe 時帳號認證失敗
+* [Fix] ADAM-6060 configuration issue
+* [Fix] Group bar chart - 當laft/right Y軸第一個Parameter的data type不是digital時, 隱藏decimals tooltip
+* [Fix] 開通帳號激活码添加校验，A-Z 0-9 16位
+* [Fix] 刪除device時, 殘留Model type在filter中
+* 
+New features:
+
+* [New] Enable create TPC Device
+* [New] SRDDashboard新增Graph類型
+* [New] LoRa device downlink feature
+* [New] Archiving功能 - 快速設定Object / parameter資料保留策略與時間
+
+
+[Portal Backend]
+
+Update list：
+
+* [Fix] 修改 notification url 为 service格式
+  
+
+[Data Archiver]
+
+Update list;
+
+* [Fix] 修改 scheduler 中任务调度部分，解决 task 一直占着 timer 的问题
+
+[Datasource API]
+
+Update list:
+
+* [Fix] 修復Dashboard寫值異常問題
+
+[DBMaster]
+
+Update list:
+
+* [Fix] 因帳號大小寫問題導致無法拿到authstring, 改為全面使用lowercase
+
+New features:
+
+* [New] add graphql mutation to set parameter RT data
+---
+## DeviceOn/BI v-1.00.007 (2021-3-3)
+
+[Portal]
+
+Fixed all test bugs：
+
+* [#24114] 在edgelink的device，用copy to my org，但object裡面只有1個parameter，修改为edgelink/webaccess scada 不支持copy to my org，需要到组织里用自行创建，会弹出如下消息：“Copy to My Organization does not support SCADA or EdgeLink. Please use Add New Object function in target organization.”
+* [#24115] 修正新增profile，加入一個parameter，但recording rate預設是1分鐘
+* [#24125] 修正從My Devices，使用copy to my org，當Parameter Quota超過，出現的error異常
+* [#24126] 在Home page的左上角汉堡包按鈕，但點下去也沒反應
+
+Update Lists：
+
+* 设备上线状态点 EdgeStatus状态修正
+* system setting样式修正，license显示creator栏位，去掉超出total quota的校验，修正错误信息覆盖右侧表格的问题，改为表头显示；
+* 修正create object from device，tag的分页number设置与 get all重复导致页面渲染失败的bug；
+
+[ Portal Backend]
+
+Update list：
+
+* 使用http-proxy-middleware 中间件, 支持Http和Https访问;
+* {post} /update/parameter/all/deviceobject 新增 hbt 字段，用于worker 动作 portal 更新 device heartbeattime。worker 调用时拿不到token，先改为直接跳过，使用 query.from  = ’worker‘，校验访问源；
+
+[ Data Worker]
+
+Update list：
+
+* 新增功能：设备 Config 信息发生变化时给 Portal-API 发送通知；
+* 新增功能：设备网络掉线事件（UeD）延迟处理以避免误报；
+
+[ Data Archiver]
+
+Update list;
+
+* 调整删除ene_tmpdata*_dailybak数据的时间，由固定凌晨3点改为每6小时删除一次，每次保留最近24小时的数据，目的为避开测试空间自动部署的时间；
+
 ---
 
-## **0.82.002 (2020-3-17)**
-> *  **Data archiver**
->       - [Fixed]   
->           1. [Fix] 断线Flag添加 
->           2. [Fix] 统计数据时过滤掉 异常数据（quality != 0 的记录）
->           3. [Fix] 修改 设备上下线 赋值部分,设备上线置位19位为1
+## DeviceOn/BI v-1.00.006 (2021-1-26)
 
-> *  **Dataworker**
->       - [Enhance]
->           1. [Fix] 当用户更新一个计算点的计算公式时，若计算公式(更新前)中存在自定义函数，更新前自定义函数仍存在于内存中且仍会被计算，这个bug会导致worker做无用的计算，可能导致计算结果错误，且会导致内存泄露（因为旧的自定义函数没有被释放）。
->           2. [Update] 增强 worker 的数据处理能力，由每次写一个 mqtt 消息包含的数据到MongoDB，改为一次写多个消息包含的数据，减少了平均每笔数据消耗的时间. 一次写入的数据数量和消息上传的频率有关，比如第一个消息包含的100笔数据写入完成后，此时queue里面已经又收到了5个消息，包含了5*100=500笔数据，则下一次写MongoDB就会一次写500笔.
+[Portal]
 
-> *  **api-org-wise-mplus**
->       - [Fix]
->           1. [Fix] 修复空字符在card上显示数字0 bug
->           2. [Fix] 追加quality声明
+Fixed all test bugs;
+
+* [#23792] 在子層(11)可以看到3個dashboard，再去點org path的父層(00)，但dashboar資料沒有更新
+* [#23813] 4012E_157_0112這個設備是連線中，但卻左邊圖像卻是紅燈
+* [#23814] 語系設定出現空白
+* [#23818] WISE 4012E內的I/O Channel，parameter name的前面有6
+* [#23820] 新增org出現error，也沒有出現同名的object
+* [#23827] 新增uno設備，輸入mac，按生成，再去按test connection，卻出現error
+* [#23828] 新增TPC設備，但沒有地方可以設定型號，mac也不能輸入
+* [#23839] 上傳adam 6060，ch1是counter mode，Min Low/High Signal Width和adam utility顯示不一致
+* [#23841] 從device建立object，但scada設備可以上傳的tad只剩1個
+* [#23852] 從My Devices，使用copy to my org，沒有判斷Parameter Quota
+* [#23853] 設定Notification Message格式跑掉
+* [#23854] 在System Settings > Advanced Setting > System Notification > Wechat，設定完後，按save，畫面一直停在loading
+* [#23855] enable/disable Notification Groups狀態，彈出的通知內容空格很大
+
+[MyDevices]
+
+1. MyDevice relatived micro-service update to version 1.00.006
+
+[ Data Worker]
+
+Update list：
+
+* 新增功能: auto fill tmpdata every 5 minutes for that not changed for long time tags.
+
+---
+
+## DeviceOn/BI v-1.00.003 (2020-12-17)
+
+[API-Portal]
+
+Fixed all test bugs;
+
+[Portal]
+
+1. Support 3 scenarios: device management , trail, subscriptionmode;
+
+[MyDevices]
+
+1. MyDevice relatived micro-service update to version 1.00.003
+
+---
+
+## DeviceOn/BI v-1.00.002 (2020-12-07)
+
+#### [Dashboard Plugin]
+
+Fixed:
+
+* [#23026] 使用template建立1.1 Organization Overview Water dashboard，然後觸發alarm，但dashboard卻沒顯示alarm;
+* [#23046] 使用template建立dashboard，有使用到Grouped Bar Chart Panel顯示異常
+* [#23050] 在3.1 Inflow pumping station，切換object，Water Flow In-Out Panel都顯示N/A
+#### [Portal-WISE-MPlus]
+
+Fixed:
+
+* [#23047] 使用profile(AutoTest_Profile)建立object後，object內沒有設定alarm， 但topic(valchg)卻收到資料;
+
+---
+
+## DeviceOn/BI v-1.00.001 (2020-12-07)
+
+#### [ALL]
+
+Update:
+
+* 支持Device Management
+* 支持Trial/Subscription
+* 支持巡检派工
+* New UI
+#### [Portal-WISE-MPlus]
+
+Fixed:
+
+* [#23047] 使用profile(AutoTest_Profile)建立object後，object內沒有設定alarm， 但topic(valchg)卻收到資料;
+
+---
+
+## DeviceOn/BI v-1.00.00*
+
+[Summary]
+
+Three kinds of user scenarios in iiot-operated Edition
+
+1. Device Management
+    * Sign up for free
+    * Can use device management functionality only
+2. Trial
+    * One month trial program with 1 trial organization & inspection
+    * 1 WISE Point / 150 parameters
+    * Org. valid in 30 days and will be auto deleted after 30+30 days.
+3. Subscription
+    * Subscription program with 1 subscribed organization & inspection
+    * 15 WISE Points per month / 2000 parameters
+    * Can redeem extra parameter through Market Place
+
+[UI Update]
+
+**Organization**
+
+1. [Change] Org.’s functional items from waterfall to tabs
+2. [Add] Inspection
+    * Each root org have one inspection site.
+    * While trial/subscription Org. created, DeviceOn/BI creates a K8S namespace for installing Inspection pod.
+        * Namespace naming rule : inspection<orgId>
+        * Example: inspection34
+    * After installation, each inspection have an unique website:
+        * URL naming rule:[https://inspectionapp-](https://inspectionapp-)<namespace>-<cluster>.<datacenter>.<domainUrl>
+        * Example:[https://inspectionapp-inspection16-eks013.hz.wise-paas.com.cn](https://inspectionapp-inspection16-eks013.hz.wise-paas.com.cn)/
+    * BI Portal embed inspection portal by iframe.
+    * While add / modify / unbind Org.’s users, BI will also add/modify/disable the corresponding inspection users.
+    * Delete inspection pod & namespace while this org is being deleted.
+3. [Change] Move “Alarm Group” function into “Event” tab
+4. [Change] Move “User Group” / “Notification Group” functions into “Notification” tab
+
+**Objects**
+
+1. [Add] “BI data lifecycle” setting in each object.
+    * Days to keep Minute data
+        * Default : 7 days, Min value: 7 days, Max value: 731 days
+    * Days to keep Other data
+        * Default : 60 days, Min value: 60 days, Max value : 731 days
+2. [Modify] Parameter – Recording Setting
+    * Recording Rate:
+        * Default = Do not record
+        * Revert the dropdown list item : “Do not record” -> 60 min -> …. -> 1 sec
+    * Hide “Group Recording”
+    * “Days To Keep Data” -> “Days To Keep RAW Data”
+        * Default: 3 days, Min value = 0 days, Max value : 30 days
+
+[New micro service]
+
+1. [Add] Data Packer micro-service
+  * Support packing MongoDB data into Azure blob
+    * rawdata
+        * Pack to /datapacker/Rawdata/(objId%10)/(objId)-(parameterName)/timestamp.csv
+        * Timestamp = 00:00:00 UTC of each day
+        * 1 file per day per parameter
+    * d_min
+        * Pack to /datapacker/D_Minute/(objId%10)/(objId)-(parameterName)/timestamp.csv
+        * Timestamp = 00:00:00 UTC of each day
+        * 1 file per day per parameter
+    * discreterecording_min & a_min
+        * Pack to /datapacker/Minute/(objId%10)/(objId)-(parameterName)/timestamp.csv
+        * Timestamp = 00:00:00 UTC of each day
+        * 1 file per day per parameter
+    * hour
+        * Pack to /datapacker/Hour/(objId%10)/(objId)-(parameterName)/timestamp.csv
+        * Timestamp = 01/01 00:00:00 UTC of each year
+        * 1 file per year per parameter
+    * Day
+        * Pack to /datapacker/Day/(objId%10)/(objId)-(parameterName)/timestamp.csv
+        * Timestamp = 01/01 00:00:00 UTC of each year
+        * 1 file per year per parameter
+  * trigger “DELETE mongoDB data” message to Data Cleaner
+      * With blob address configuration
+          - Rawdata: delete data before 5 days ago
+          - Min data: delete data before 7 days ago
+          - Hour / Day : delete data before 45 days ago
+
+      * Without blob address configuration (standard version)
+          - Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
+  * Clear Blob by user’s setting
+      * Use Object setting (days to keep Min / Other data) & parameter setting (days to keep RAW data)
+  * Get Data APIs (internal use)
+  * Update data APIs for data resuming (internal use)
+2. [Add] Data Cleaner micro-service
+    * [Add] Delete RAWData by drop collection
+    * [Add] Delete RAWData by parameter
+    * [Add] Delete data (deviceInfo / rtdata / rawdata) by Device
+    * [Add] Delete data (tagInfo / rtdata / rawdata) by tag
+    * [Add] Delete Historical data (min/hour/day/week/month/year) by object
+    * [Add] Delete Historical data (min/hour/day/week/month/year) by parameter
+3. [Add] MyDevice relatived micro-service
+    * [Add] api-dm
+      API Support for DeviceON/BI Device Configuration, FOTA, COTA
+    * [Add] portal-manage
+      Management Portal for Define Device Model Profile
+    * [Add] api-manage
+      API Support for Management Portal
+    * [Add] mqtt-proxy
+      MQTT+SSL Proxy for DeviceON/BI Portal to Monitor Real Time Data
+    * [Add] device-config
+      Handle Device Configuration, FOTA, COTA Command by MQTT
 
 
-## **0.81.001 (2019-12-3)**
-> *  **Profile Proxy**
->       - [Proxy]   
->           1. [Update] use api-profile-proxy  URL instead of apm URL
-> *  **Dataworker**
->       - [Enhance]
->           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
->           2. [Update] 增加设置 10 秒的 MongoDB serverSelectionTimeout 时间，
->           3. [Update] 增加设置 10 秒的 MongoDB socketTimeout 时间，
->           4. [Update] 加载 device 资料时，略过 edgeid 为空的 device。
->           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
->           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
->           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
-> *  **Menu Management**
->       - [UI]
->           1. [Add] Support Multiple Menu in one ong
->           2. [Add] Support sync menu tree with first language's tree
->           3. [Add] Support Menu Tree Dragable
->           4. [Update] 固定Dialog大小，新增Menu Tree Scroll Bar
->           5. [Add] Support collapse menu tree
->             
->       - [CSS Bug]
->           1. [Fix] bugfix: 修正新增拖拉&收合功能後產生的menu tree css bug。
-> *  **Profile**
->       - [UI]
->           1. [Add] Sort Profile Card by name, created date or owner; order by asc., desc.
->       - [Category]
->           1. [Update] Category Validation
->              a) 'Uncategorized'保留字 
->              b) 最大長度64
->              c) 除了 -_. 以外的特殊字元過濾
->           2. [Update] Category Sort by Name 
->       - [Parameter UI]
->           1. [Fix] bugfix: 在Parameter List中的Formula cell增加ellipsis(...) 讓超出長度的文字以...表示。
->           2. [Fix] bugfix: 修正category 輸入框顯示高度太窄問題。
->           3. [Fix] 修正hover category tag時，Delete button出現圓圈並超出外框
->           4. [Note] APP_ENV : development 的時候指向cn 其他值指向.com
->       - [Profile Excel]
->           1. 新增Excel欄位Validation, 並顯示每個錯誤的Cell欄位 :
->           2. Information分頁
->              a) profileName 未填or只填空格
->              b) mode 未填or只填空格
->           3. Parameter分頁, 必填欄位未填or只填空格
->              a) 不分類型的必填欄位包含
->                    parameterName / paramType / dataType / value / 
->                    groupRec / recRate / dataKeptDays
->              b) Number類型額外必填欄位包含
->                    spanHi / spanLo / decimalPrecision / recType
->                    maxChangeRatePerMin
->              c) 計算點額外必填欄位包含
->                    calcRate / formula
->           4. 其他分頁的parameterName未填or只填空格 
->           5. spanHi < spanLo
->           6. span Hi, spanLo, decimalPrecision不是number
->           7. 錯誤的 paramType and dataType
->           8. parameterName重複或含有特殊字元(目前特殊字元只允許-_)
->       - [Alarm Code Excel]
->           1. [Add] Alarm Code Excel新增ja欄位
-> *  **Portal**
->       - [Object UI]
->           1. [Fix] bugfix: 修正Defect #18553 新建object from profile會拿到非預期的圖片。
->       - [Multi-language]
->           1. [Fix] Correct multi-language of Upload Image / Upload alarm code / delete profile / delete menu / delete parameter dialog
-> *  **User Function**
->       - [New Function] 
->           1. [Add] getGroupAlarmStatus : 遍歷Group下所有object，有沒有"正在發生"的Alarm
->           2. [Add] getObjectAlarmStatus : 查詢這個計算點所在的object有沒有"正在發生"的Alarm
->           3. [Add] getGroupParamSum: 遍歷Group下所有object的某一個Param的當前值加總
-> *  **Notification Group**
->       - [UI]
->           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
->           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
-> *  **Org./Group && Object**
->       - [new feature]
->           + group/organization
->               + [New] 修改建组织的操作流程:建组织第一步先选模板 可不选 
->               + [New] 新建组织时创建默认物件，与组织同名;更新组织时同步更新默认Object
->               + [New] 修改语言切换bar位置 
->               + [New] 添加头部引导条 
->               + [New] 经纬度改为必填，如果可以获取到来自Google提供的api 的经纬度，用获取的经纬度，拿不到研昆山研华经纬度当默认值 
->               + [New] worldmap template 添加清空按钮，可不填 
->               + [New] 编辑模式下隐藏引导条 
->               + object 
->           + select parameter
->               + 界面新增 block type
->               + 默认展示的参数个数从10改到30
->               + parameter type 列添加筛选功能
->               + 选择模板添加清空按钮，可不选
->               + profile list 添加过滤，值显示public 或者当前用户自己建的profile
->               + select tag
->               + 修改操作按钮的图标
->           + setup object
->               + 编辑参数时，param name和rule name 不可修改, 修改param删除时候的确认提示 、 rule name 删除时候添加确认步骤
->               + from device 创建 object 时，来自区块的点保存为模板时参数名去掉区块的名字
->               +  新增object 时候将当前Object 的id 从'>           +1'改为 '@equipId'
->               + 计算公式里所有自定义函数存给后台时添加两个参数：当前的 orgid、objectid。用 @orgId 表示正在创建的group id,@equipId 表示正在创建的Object id
->               + 添加 calcFormulaDisplay 字段
->               + 修改 stateTxt 默认字段为'[[0,0],[1,1]]'
->               + 添加自定义函数的跳转页面
->               + 修改从profile 建object 时绑定设备时的取值逻辑：设备点config优先，如果设备config 参数值为空或者没有配置则取来自    profile 的值。
->               + save as profile 的 owner 统一转换为全小写
->               + 编辑模式下隐藏引导条
->               + home 新增 Home page 
->           + header 新增item：'home' 用于回到 home 页面
->           + organizationManagement 
->               + 锚点跳转时候展开相应的列表
-    >           + object list
-    >               + 新增 org./group 列
-    >               + 列出有权限的所有object(上一版本只展示当前组织的object)
-    >               + 显示默认object(包括子节点的默认object)
-    >               + 添加 view button(子组织的默认object父节点只有view 的权限)
->           + common
->               + 处理文字溢出
->               + 如果有多层弹框, cancel 按钮需要确认表示结束进程，点击确定将关闭底层所有弹框。
->       - [fix]
->           + group/organization 
->                + 英文語言編輯organization視窗上的標題文字為Edit Group
->           + object 
->                + select parameter
->                + 默认选中的模板和参数不对应
->           + setup object
->                + 从模板读取记录类型没有读取，保存为模板时记录类型没有保存
->                + deadBand delayTime、restoreDelayTime、deadBandType 字段无法存储(alarm 组件JSON 有更新)
->           + header 
->                + help里面的quick start 文字溢出
-> *  **Dataworker**
->       - [Enhance]
->           1. [Fix] bugfix: 一个 device 出现异常数据后被设置 ErrCode, 异常消除后 ErrCode 未清除。
->           2. [Update] 增加设置 10 秒的 MongoDB serverSelectionTimeout 时间，
->           3. [Update] 增加设置 10 秒的 MongoDB socketTimeout 时间，
->           4. [Update] 加载 device 资料时，略过 edgeid 为空的 device。
->           5. [Update] 加载 device 资料时, 若 edgeid 两端有空格, 则先修剪空格。
->           6. [Update] 删除 device 时，devicertdata 可能删除失败, 所以再以 edgeid 为条件删除一次。
->           7. [Update] TotalObjects() 函数参数定义更新: 若 objectType 传负值, 则认为任何 objectType 都符合查询条件。
-> *  **Portal API**
->       - [new feature]
->           1. edge add errcode
->           2. edge blocktypename 不区分大小写
->           3. org Admin可以添加new user
->           4. 添加非space manager不能删除root org的限制
->           5. 添加root org的admin可以看到所有子组织不管是否有权限；并且可以把自己加入没有权限的组织中
->           6. alarm tag group支持报警区间多选
->           7. M+ Admin对应Dashboard org Admin M+其余角色对应viewer
->       - [fix]
->           1. fix alarm notification messageccontain '' ""创建notification group会失败的问题
->           2. 如果org下面已经创建alarmusergroup删除org会失败的问题
->           3. fix 当notification权限scope已存在时报错的问题
-> *  **Alarm Service**
->       - [New Feature]
->           1. 新增Test Message偵測AMQP連線是否正常
->       - [Fix]
->           1. 修正update rule有帶symbol但沒帶region造成判斷錯誤
-> *  **Notification Group**
->       - [UI]
->           1. [Fix] bugfix: fix submit get error when description is empty and the first time create notification group-dev,fix submit get error when description is empty and the first time create notification group.
->           2. [Fix] 修正Create Notification Group時，若不輸入description, Submit時會出現error
-> *  **Data source**
->       - [Raw Data]
->           1. [Update] 分钟历史数据，查询范围起始补前一笔数据，2.新增rawdata，limit为900。
->       - [New Features]
->           1. datasource新增displayname dropdown
->           2. 新增历史数据Minute,Day,Week,Month,Year支持补数据
->           3. 新增rawdata原始数据，返回结果上限900
->           4. datasource新增cumulate datatype
->           5. 提升hisdata，rawdata查询速度
->       - [fixbug]
->           1. 修复rtdata返回结果在graph panel中不显示问题
->           2. 修复digital点历史值查询不到问题
->           3. 修复graph legend与时间轴不对应问题
->           4. 修复部分查询不能返回target问题
->       - [function type]
->           1. objectmonitor返回结果新增column
->           2. 新增object/groupStatusDuration/Occurrence，object/groupAvail计算digital点状态发生时数，启动次数及时间稼动率
->           3. objectmonitor，alarmlog_rt，alarmlog_his，worldmap使用M+ object设置的【Additional Message URL】作为额外信息链接
->           4. worldmap支持cumulate数据
->           5. alarmlog_rt新增parameter作为返回数据的column
-> *  **Panel**
->       - [New][Log Chart Panel] 
->           1. [Add] 支援以log格式的Y軸顯示數據
->           2. [Add] 支援timeseries的query data format
->           3. [Add] 支援x軸時間格式修改
->           4. [Add] 支援顯示ISO 10816定義之震動規範顯示圖表底色
->           5. [Add] 支援修改線條顏色、symbol、legend fornt等客製化配置
-
-## **0.80.008 (2019-11-11)**
-> **[Bug Fix]**
-> *  **Portal**
->       - [Object]   
->           1. [Fix] Fix bug Defect #18458 建立object將左側DataSource移至右側時會選不到測點
->           2. [Fix] Fix bug Defect #18457 建立object時，點擊所新增設備測點名稱DataSource欄位為空白
->       - [Alarm]
->           1. alarm group的 alarm rules的多选框默认选择一项，清空后取消勾选，发生修改时user management，space manager被邀请的用户不允许修改信息，list 的按钮显示为view图标，创建space manager时对非当前用户创建的子用户添加邀请机制
-## **0.80.007 (2019-11-01)**
-> **[Bug Fix]**
-> *  **Portal**
->       - [Object]   
->           1. [Fix] Click ‘>’ when no device information is requested, and the device information will be requested automatically until the data comes back, and then the data will be moved from left to right;
->           2. [Fix] Add description for 0,1 change stateTxt from ‘’ to ‘[[0,0],[1,1]’
->           3. [Fix] Fix constant point data type error when coming from profile change 31/32/33 to 11,12,13;
->           4. [Fix] Fix the bug that parameter DOM does not update sometimes after paramtype changes;
->           5. [Fix] Fix bug defect #18307:alarm 在object裡的參數設定警報時，range類型的H警報無法由>=改為>;
->           6. [Fix] Fix bug: “==” was mistaked to “/ b ==”
->       - [Device]
->           1. [Fix][device 时间戳] edit 时间戳可以修改 Edit device timestamp to be modifiable;
->           2. [Fix][tagInfo]  列表 unit 重复 tagInfo list unit field displays Unit
->           3. [Fix][iSensing] iSensing生成按钮disabled, User clicks "Generate" button get username and password. "Generate" button could not be clicked before the data came back. After the data was responsed successfully, it became clickable;
->       - [Profile]
->           1. [Fix] 如果Excel中，Complex Alarm只設定一個Range上傳會失敗;
->           2. [Fix] 檢查完整份Excel後顯示完整錯誤 目前支援檢查：
->               - parmeterName : Empty / include special symbol / duplicate /  only contain space
->               - paramType : Empty
->               - value : Empty
->               - dataType : Empty
->           3. [Fix] Decimal Places / Calculating Rate / Days to keep data / Max change rate若設為0沒辦法正確Save;
->           4. [Fix] Excel 內的 decimalPrecision, dataKeptDays, maxChangeRatePerMin, recRate, calcRate 若設為0，生成Profile沒有正確填0而是填預設值;
->       - [upload / delete dialog multi-lang] - 上傳 / 刪除的dialog多語言
->           - 打開 profile，上傳 alarm code excel 同時 check 語言是否與 tab 相同，上傳成功後刪除 alarm code excel ，並檢查刪除時的語言是否有跟隨 tab，切換至下一個 tab 重複動作
->           - 上傳 alarm code excel，切換至不同語言的 tab 做刪除的動作，check 刪除的語言是否有跟隨 tab
->           - 故意傳不接受的類型或過大的檔案檢查文件上傳錯誤的訊息語言是否有跟隨 tab 更換
->           - 圖片的部分與上述 alarm code excel 的測試手法相同
->           - profileManagement 或 menuManagement 刪除 card -> 跳出 delete dialog -> 取消或確認 -> 切換系統語言反覆測試
->           - 開啟有 parameter 的 profile 點選刪除 parameter -> check 語言跟隨 tab -> 取消或確認 -> 切換 tab 反覆測試
->           - 開啟有 image upload 的 dashboard 或 profile -> 確認上傳語言-> 確認 message 語言 -> 確認刪除語言
-
-> *  **dataworker**
->       - [Connection] 
->           1. [Fix] 当数据的时间戳毫秒部分是 ‘0’ 或 ’00’ 时, DataThread 会陷入死循环导致无法处理数据且占CPU 100%;
->           2. [enhance] 增加探测线程是否被阻塞或当掉, 如果发生, 则记录线程栈状态并重启线程
-> *  **Notification**
->       - [Alarm Priority]
->           1. [Fix] 修改 almtrigger 中 Priority 由 int 改为 string 的遗留问题，之前未修改全。
-
-## **0.80.006 (2019-10-12)**
-> **[Bug Fix]**
-> *  **Portal**
->       - [Object]   
->           1. [Fix] 常数点更新初始值栏位在 profile 里隐藏。Object 模式下，当新建 常数点的时候隐藏。
->           2. [Fix] 修补当页面数据量大切换org 时， 编辑上一个org 的 object 会将 object 存到当前Org 下的bug。解决办法：编辑时不更新orgId，object 加载完毕再结束loading。
->           3. [Fix] 修补当处于object 编辑页面时，token 失效后重新登录，继续编辑后点保存，此时Org id 被重置， 会保存到最新被选中的org 下的问题。解决办法：如果是新增，取用户点新增按钮时候的id,如果是编辑，不会更新orgid;
->           4. [Fix] DataType of Deadband(float), Alarm Delay(positive integer), Alarm Restore Delay(positive integer)
-> *  **dataworker**
->       - [Connection] 
->           1. [Fix] Fixed the bug of iSensing and NB-IoT device cannot upload data;
-> *  **Alarm Service**
->       - [Message Queue]
->           1. [Fix] 把RabbitMQ Queue的AutoDelete改成false, 避免失去連線後queue被自動刪除
->           2. [Fix] 加上log, 如果某一個message處理太久會寫下log   
-> *  **Panel**
->       - [controller-switch]
->           1. [Fix] Cannot setvalue bug @ first button
->           2. [Fix] Cannot change button color properly while set same tag @ both side of button
-
-> **[Add]**
-> *  **dataworker**
->       - [DataProcess] 
->           1. [Add] Change tag value时，如果新的value是一个字符串形式的数值, 则自动转成数值, 且isNum设为true。 Amqp consumer 保存为 MainClass 的静态对象, 以测试是否能解决broker重启后无法重新绑定到channel的问题。 timer thread 也保存为 MainClass 的静态对象, 测试是否是非静态对象导致 timer thread 停掉。 logDebugMsg 接口从 TimerThread class 中转移到 _Util class 中。 增加内置数学函数 pow 的支持;
-
-## **0.80.005 (2019-09-27)**
-> **[New Features]**
-> *  **Portal**
->       - [UI]   
->           1. [Fix] New UI bug fixed;
->           2. [Update] Support object/dev/org/group name auto filter front/end space and  case insensitive;
-> *  **dbcreator**
->       - [Role and User] 
->           1. [Fix] Fix the bugs of the user role as space manager;
-
-## **0.80.004 (2019-09-23)**
-> **[New Features]**
-> *  **Portal**
->       - [UI]   
->           1. [Fix] New UI bug fixed
->           2. [Update] Update SSO and UI css
-> *  **dbcreator**
->       - [Resource]   
->           1. [Update] Add new message string and tips
-
-## **0.80.003 (2019-09-20)**
-> **[New Features]**
-> *  **Portal**
->       - [UI]   
->           1. [Fix] New UI bug fixed
-> *  **dbcreator**
->       - [Space manager]   
->           1. [Fix] insert the default, which id=0 account as space manager
-
-## **0.80.002 (2019-09-19)**
-> **[New Features]**
-> *  **Portal**
->       - [UI]   
->           1. [Fix] New UI bug fixed
-> *  **Dataworker**
->       - [Calc Tag]   
->           1. [Fix] by Timer/by Event bug, if Calculation frequency=0 second, will by Event
-
-## **0.80.001 (2019-09-18)**
-> **[New Features]**
-> *  **Portal**
->       - [Organization]   
->   
->       - [Profile Management]   
->           1. [Update] New UI/UX for Object Profile
->           2. [Update] Change Alarm Code List file from .csv to .xlsx (Excel Format)
->           3. [Add] Search Profile by Category filter
->           4. [Add] Search Profile by Name (fuzzy search)
->           5. [Add] Profile Privacy (Only can see Public Profiles and login user's Private Profile)
->           6. [Add] Calculation Parameter support formula check and auto generate code
->           7. [Add] Profile Preview from Profile Management Page
->       - [Menu Management]   
->           1. [Add] Support Multiple SRP in one organization
->           2. [Update] Select Dashboard Dialog can list all dashboards of this org in WISE-PaaS Dashboard
->           3. [Add] Drag & Drop configuration for menu tree
->       - [Alarm & Notification]
->           1. [Fix][Notification Group] Cannot change Alarm Group / User Group in Edit Mode
->           2. [Fix][Notification Group] Alarm Group / User Group with placeholder and light color
->           3. [Add][Notification Group] Can add Group/Object/Parameter path text in message by "Select Variable Dialog"
->
-        
-## **0.62.005 Build001 (2019-8-16)**
-> **[New Features]**
-> *  **Portal**
->     1. Update UI/UX to 0.52 version;
->     2. Support iSensing Device;
->     3. Fixed some bugs;
-> * **Portal Service** 
->     1. As portal;
-> * **Worker** 
->     1. 增加支持毫秒数不为 3 位数的 timestamp 格式. 完成功能: 自定义函数记录到PostgreSQL中. 取消输出log: Send message to iot-hub, topic=xxx, message=xxx 消息, 以减少log。 增加功能: 如果没有配置 tag.datatype，则自动把数值类型点的 datatype 设为1，非数值的设为3. 支持外挂计算函数每个函数有独立的 serviceurl。
->     2. Fixed some bugs;
-> * **Archiver** 
->     1. Change to data access by object
-> * **Notification&Alarm** 
->     1. Fixed some bugs;
-> * **DBCreator** 
->     1. Change the build package to Gradle Mode
-
-## **0.62.004 Build001 (2019-8-8)**
-> **[New Features]**
-> *  **Portal**
->     1. Update UI/UX to 0.52 version;
->     2. Support iSensing Device;
->     3. Fixed some bugs;
-> * **Portal Service** 
->     1. As portal;
-> * **Worker** 
->     1. Support iSensing Device;
->     2. Fixed some bugs;
-> * **Archiver** 
->     1. Change to data access by object
-> * **Notification&Alarm** 
->     1. Fixed some bugs;
-> * **DBCreator** 
->     1. Change the build package to Gradle Mode
-
-## **0.62.003 Build001 (2019-7-23)**
-> **[New Features]**
-> *  **Portal**
->     1. Update UI/UX to 0.52 version;
->     2. Show Creator of Device in Device List;
->     3. Fixed some bugs;
-> * **Portal Service** 
->     1. As portal;
-> * **Worker** 
->     1. Seperate database creator to dbcreator;
->     2. Fixed some bugs;
-> * **Archiver** 
->     1. No changes
-> * **Notification&Alarm** 
->     1. Support Line
-> * **DBCreator** 
->     1. Seperated from the worker;
->     2. Will change this APP to cf Task next version;
-
-## **0.62.002 Build001 (2019-7-9)**
-> **[New Features]**
-> *  **Portal**
->     1. Support online taginfo;
->     2. Menu management support multi-language;
->     3. Fixed some bugs;
-> * **Portal Service** 
->     1. As portal;
-> * **Worker** 
->     1. Support NB-IoT;
->     2. Fixed some bugs;
-> * **Archiver** 
->     1. No changes
-> * **Notification&Alarm** 
->     1. No Changes
-
-## **0.61.001 Build001 (2019-6-11)**
-> **[New Features]**
-> *  **Portal**
->     1. Support calculation tag;
->     2. Support Alarm;
->     3. More dashboard template;
-> * **Portal Service** 
->     1. As portal;
-> * **Worker** 
->     1. Support new version WebAccess;
->     2. Support MQTT Action=4
->     3. Support calculation tag;
-> * **Archiver** 
->     1. No changes
-> * **Notification&Alarm** 
->     1. New Apps
-
-## **0.50.004 Build003 (2019-5-5)**
-> **[New Features]**
-> *  **Portal**
->     1. Add auto refresh device status function;
->     2. Dashboard support multi-language;
->     3. Change [Add Device] dialogue Layout;
->     4. Add SSO Cookie to support Grafana Login;
->     5. Add debug logs on system setting/others;
->     6. Add saveFreq,paramShortName,statetTxt field；   
-> * **Portal Service** 
->     1. Machine API add saveFreq, paramShortName, stateTxt(state0-state7) property
->     2. Get Version API
-
-## **0.50.004 Build001 (2019-4-28)**
-> **[New Features]**
-> 1. First Version Control
-
-> **[Fixes]**
-> 1. Support the device status manual refresh
-
-## **0.50.002 Build001 (2019-4-xx)**
-> **[Space List]**
-
-> | Server   |org     |   space|    Description |
-> |--------  |--------|--------|----------------|
-> |HK        |AdvIIoT-EnE |DeviceMPlus |For RD Develop|
-> |HK        |AdvIIoT-EnE |EnergyPlus |For Dalian JiuPeng Develop|
-> |HK        |AdvIIoT-EnE |SRPDemo |For PM/PSM Demo|
-> |HK        |AdvIIoT-EnE |ZhiPin |For Fuzhou ZhiPin test WISE.M+|
-> |PeKing    |AdvIIoT-EnE |WISEMPlus |For RD Develop/Test/Demo in ACN|
-> |HK    |AdvIIoT-SAE |TrainingMplus |For FAE/AE Demo/Training|
