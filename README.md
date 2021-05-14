@@ -1,4 +1,28 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.00.010 (2021-05-14)
+
+### [Portal] ###
+
+Bug Fix：
+
+* [#24990] [DM] Tag Type顯示錯誤
+* [#24960] DM功能內的configure異常
+* [#24958] 在object分頁，繁中語系翻譯錯誤
+* [#24951] 在dashboard分頁，新增樣板儀表板，sava後，點預覽儀表板，在回來BI，點新增空白儀表板，會出現空白畫面
+* [#24950] 新增wise device，輸入mac，11-11-11-11-11-11-11，save後，在去edit，連線類型卻變成IMEI code
+* [#24949] [Menu Management] filter功能異常
+* [#24945] 新增警報群組，不用設定名稱，也可以save
+* [Org Setting] 修正root org的inspection的dccsUrl的设置 (之前為固定字串)
+* 
+ 
+Update Lists：
+
+* [Org Setting] Enable / Disable Inspection設定
+* [Home] 開啟Archiving Icon
+
+### [Datasource API] ###
+* [Fix] duration/occurrence number recording rate 和 time interval 冲突, 造成多補數據
+
 ## DeviceOn/BI v-1.00.009 (2021-04-20)
 
 ### [Portal] ###
