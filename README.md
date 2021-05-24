@@ -1,4 +1,17 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.00.011 (2021-05-21)
+
+### [Portal] ###
+
+Bug Fix：
+
+* [Parameter] 修复计算点公式中参数关联param name有冒号时显示和保存不完整的bug
+* [User] 修復Org->User tab的loading樣式不起作用
+* [Subscribe] trial/subscribe頁面, create org添加校验特殊字符与org校验保持一致
+* [System Setting] role setting中, Value / Alarm設定列消失
+* [System Setting] License Setting設定trial org的expired date失敗 
+
+---
 ## DeviceOn/BI v-1.00.010 (2021-05-14)
 
 ### [Portal] ###
