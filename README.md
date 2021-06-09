@@ -1,4 +1,44 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.001 (2021-06-07)
+[New Feature]
+* Plugin Service 
+  * Allow user to integrate 3rd party API data into DeviceOn/BI
+  * A plugin function defines one API call
+    * Support OAuth2 / Basic Authentication / Bearer / User defined string method of Authentication
+    * Can define input source from BI Parameter or fix string
+    * Can define one to many output from JSON format of API response body
+  * A plugin function can only be defined in Root Org.
+  * Plugin functions of a root org can be shared within this root org and it descendant orgs.
+  
+* Forwarding Service
+  * Allow user to forward BI data onto 3rd party API / MQTT position
+  * A forwarding rule defines one rule to forward data onto an api or a MQTT topic
+    * Can define request body JSON format
+    * Can define variable of JSON data and bind the variable with BI parameter
+  * A forwarding rule can be defind in any level of org.
+  
+* Device Group in Device Management
+  * Allow user to organize their devices by group
+  * A group can be shared to other users.
+  * User can view group as chart or list.
+
+* External API Interface - api-hub-deviceon-bi
+  * Integrate DBMaster API with sso token validation
+  
+[Update]
+* [Portal] Calculation Parameter UI update
+  * Integrate Plugin function list
+* [Portal] Create Profile from device
+  * New UI flow to create a profile from device
+* [Dashboard Panel] Panel & display update
+  * EnE Dashboard switch panel
+  * EnE alarm panel
+  * Datatable with monitor function 
+  * Hide Org / Object id (#xxx) in dropdown list of data source
+* [DBMaster] Support set parameter value
+* 
+  
+---
 ## DeviceOn/BI v-1.00.011 (2021-05-21)
 
 ### [Portal] ###
