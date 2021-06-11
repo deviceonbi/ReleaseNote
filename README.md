@@ -1,4 +1,15 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.002 (2021-06-11)
+#### [DBCreator] #### 
+Bug Fix:
+[#25489] Cannot add/delete Org or Object (caused by missing DB fields)
+
+#### [Portal] ####
+Update:
+* [Profile] Profile card highlight
+* [Menu Management] Menu Management highlight
+
+
 ## DeviceOn/BI v-1.01.001 (2021-06-07)
 [New Feature]
 * Plugin Service 
