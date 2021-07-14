@@ -1,4 +1,39 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.003 (2021-07-05)
+#### [Portal] ####
+Bug Fix:
+* [#25542][Device Group] 編輯group內的Description，SAVE後，卻還是空的
+* [#25543][Device Group] 紅色框內的按鈕名稱，切換語系後，也都是英文
+* [#25545][Device Group] backup權限不能把另一個backup user刪除
+* [#25547][Device Group] 在設備上面，點選"從組織中刪除"，出現的提示框訊息有問題
+* [#25550][Device Group] 用manager去把另一個backup user改成viewer，卻不行
+* [#25553][Device Group] Device Name太長，會超出框外
+* [#25562][Device Group] 註冊新帳號，再從存在的group加入新帳號，但新帳號內的group卻還是空的
+* [#25576][Plugin] 新增bearer Auth，save後，再去編輯，api body 會變成之前殘留的資料, token密鑰也消失
+* [#25577][Plugin] 新增Plugin，SAVE後，卻出現error
+* [#25579][Plugin] 新增Bearer頁面 提示不正确
+* [#25584][Plugin] 新增Plugin，SAVE後，再去編輯，出現異常
+* [#25589][Plugin] 在org內新增parameter後，plugin功能會被disable
+* [#25593][Plugin] 設定plugin時，在配置output有相同的部分，會導致計算公式轉換錯誤
+* [#25604][Plugin] preview result是fail，但message卻是顯示success
+* [#25605][Forwarding] 新增Basic/MQTT Auth，save異常
+* [#25611][Forwarding] 增加MQTT forwarding，topic用二個變量，按測試卻不是送到對應的topic
+* [#25613][Forwarding] 在Payload參數增加時間，參數時間是指定常數量parameter，按測試卻沒回應
+* [#25616][Forwarding] 查詢狀態為200，但卻是X(fail)
+
+#### [api-plugin] ####
+Bug Fix:
+* [#25541][Plugin] 當plugin引用的计算点是每秒運算一次，會導致内存寫滿，plugin無法運作
+
+#### [Datasource API] ####
+Bug Fix:
+* [#25591][Datasource]在Grafana增加singlestat panel，卻沒顯示資料
+* [#25541]用New From Template建立2.1 Object Monitoring和4.1 Alarm Report，preivew卻沒有資料 
+
+#### [DBCreator] #### 
+Update:
+* 改變讀取dashboardTemplate / panelTemplate方式為從json檔讀入
+
 ## DeviceOn/BI v-1.01.002 (2021-06-11)
 #### [DBCreator] #### 
 Bug Fix:
