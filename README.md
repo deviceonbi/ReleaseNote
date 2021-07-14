@@ -1,4 +1,23 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.004 (2021-07-14)
+#### [Portal] ####
+Update:
+* [Org Setting] External Blob Setting in Root Org Settings
+* [Inspection Setting] 若Inspection Disable, 優化畫面顯示為Service Disabled
+  
+Bug Fix:
+* [#25743][Device] SA空間，新增WISE/ADAM，port無法切換
+* [#25810] 用New From Template建立dashboard，preview無法看到資料
+* [#25809] 用New From Template建立1.1 Organization Overview Water，无法选择组织。
+* [#25776][Plugin/Forwarding]檢查json format功能，只輸入數字，檢查卻是正確
+* [#25593][Plugin] 設定plugin時，在配置output有相同的部分，會導致計算公式轉換錯誤
+#### [dashboard-API] ####
+Bug Fix:
+* 只存在子組織的Admin/Engineer/Operator不能寫值, 會出現Error提示
+
+#### [api-plugin] ####
+Update:
+* 刪除Org時, api-plugin訂閱消息, 並刪除該org相對應的plugin資源
 ## DeviceOn/BI v-1.01.003 (2021-07-05)
 #### [Portal] ####
 Bug Fix:
@@ -14,7 +33,6 @@ Bug Fix:
 * [#25579][Plugin] 新增Bearer頁面 提示不正确
 * [#25584][Plugin] 新增Plugin，SAVE後，再去編輯，出現異常
 * [#25589][Plugin] 在org內新增parameter後，plugin功能會被disable
-* [#25593][Plugin] 設定plugin時，在配置output有相同的部分，會導致計算公式轉換錯誤
 * [#25604][Plugin] preview result是fail，但message卻是顯示success
 * [#25605][Forwarding] 新增Basic/MQTT Auth，save異常
 * [#25611][Forwarding] 增加MQTT forwarding，topic用二個變量，按測試卻不是送到對應的topic
@@ -23,7 +41,7 @@ Bug Fix:
 
 #### [api-plugin] ####
 Bug Fix:
-* [#25541][Plugin] 當plugin引用的计算点是每秒運算一次，會導致内存寫滿，plugin無法運作
+* [#25541][Plugin] 當plugin引用的计算点是每秒運算一次，會導致内存寫滿，plugin無法運作 (加上ARC演算法)
 
 #### [Datasource API] ####
 Bug Fix:
