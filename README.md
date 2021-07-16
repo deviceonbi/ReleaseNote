@@ -1,5 +1,9 @@
 # DeviceOn/BI Release Note
 ## DeviceOn/BI v-1.01.004 (2021-07-14)
+#### Knowing Issues ####
+* [Forwarding] 若Auth有被Forwarding Rule使用, 應該要阻擋刪除該Auth
+* [Portal] Device copy to my org後生成的Object, 編輯該Object會無法SAVE
+* 
 #### [Portal] ####
 Update:
 * [Org Setting] External Blob Setting in Root Org Settings
@@ -7,10 +11,16 @@ Update:
   
 Bug Fix:
 * [#25743][Device] SA空間，新增WISE/ADAM，port無法切換
-* [#25810] 用New From Template建立dashboard，preview無法看到資料
-* [#25809] 用New From Template建立1.1 Organization Overview Water，无法选择组织。
+* [#25810][SRPDashboard] 用New From Template建立dashboard，preview無法看到資料
+* [#25809][SRPDashboard] 用New From Template建立1.1 Organization Overview Water，无法选择组织。
+* [#25807][Plugin] 新增Plugin，SAVE後，再新增Plugin會有殘留資料
 * [#25776][Plugin/Forwarding]檢查json format功能，只輸入數字，檢查卻是正確
+* [#25745][Plugin/forwarding] auth已經被使用，再去刪除，出現的提示訊息異常
+* [#25619][Forwarding] 使用patch方法無法測試成功並SAVE
+* [#25618][Forwarding] 使用put方法無法測試成功並SAVE
+* [#25607][Plugin] 按refresh按鈕，顯示成功，但狀態還是fail
 * [#25593][Plugin] 設定plugin時，在配置output有相同的部分，會導致計算公式轉換錯誤
+
 #### [dashboard-API] ####
 Bug Fix:
 * 只存在子組織的Admin/Engineer/Operator不能寫值, 會出現Error提示
@@ -18,6 +28,7 @@ Bug Fix:
 #### [api-plugin] ####
 Update:
 * 刪除Org時, api-plugin訂閱消息, 並刪除該org相對應的plugin資源
+
 ## DeviceOn/BI v-1.01.003 (2021-07-05)
 #### [Portal] ####
 Bug Fix:
