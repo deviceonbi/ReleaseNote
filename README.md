@@ -1,9 +1,58 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.005 (2021-08-17)
+#### [Portal] ####
+Bug Fix:
+* [#26137][DM] 上傳Adam6051後，無法設定configuration
+* [#25933][Plugin/forwarding] 在繁中語系，刪除auth，出現的提示訊息卻是簡中
+* [#25922][Dashboard Wizard]建立2.1 Object Monitoring dashboard，部分panel無資料
+* [#25835][Object]Device copy to my org後生成的Object, 編輯該Object會無法SAVE
+* [#25619][Forwarding] 使用patch方法無法測試成功並SAVE
+* [#25618][Forwarding] 使用put方法無法測試成功並SAVE
+* [Forwarding] 若Auth有被Forwarding Rule使用, 應該要阻擋刪除該Auth
+* [Org Setting] 修复save org后blob信息没有更新，影响days to object data设定的bug
+* [Dashboard Wizard] 修正用戶從Dashboard修改dashboard後, JSON結構改變(多了i18n多語言), 而Wizard後續無法修改的問題
+* [Plugin] 修复删除authentication，页面loading卡住bug
+  
+Update:
+* [Subscribe] 增加advance subscribe的序號支援
+* [Dashboard Wizard] Switch Panel修改可獨立開關object/parameter/timeinterval的設定介面
+* [Inspection] 巡檢在disable狀態, 分頁顯示Service disabled訊息
+
+#### [Portal-backend] ####
+Update:
+* Subscribe增加advance subscribe的序號支援
+
+#### [Archiver] ####
+Bug Fix:
+* 取消使用tmpdataAvg/tmpdatasum/tmpdatadiscrete中間表, 解決數據量大時, mongodb存取緩慢的問題
+
+#### [dbmaster] ####
+Bug Fix:
+* Cumulative Parameter的AVG(差值)計算方式有誤
+* Scale api回傳值的timestamp會飄移
+* 日資料以上, 沒有回傳Parameter所在時區的00:00:00
+* 如果帳號有大寫字母, 會找不到組織的Auth資訊  
+Update:
+* 新增TopViewableOrgs給api-org使用, 可顯示用戶權限能看到的根節點列表
+* 當Panel顯示點數上限足夠時, 不主動scale, 而是直接返回資料庫的數據
+
+#### [datapacker] ####
+Update:
+* 若備份失敗會寄通知email到組織的creator
+* 接收notify/cfgchange mqtt消息, 取得刪除組織的通知, 並刪除相關Blob資料
+
+#### [api-org] ####
+Bug Fix:
+* ringratio的同天/同小時, 改取用資料庫中的AVG數據來計算
+
+Update:
+* 取消同週期上下線時, 會畫一條下引線的行為, 改為和下線相同(顯示null)
+
 ## DeviceOn/BI v-1.01.004 (2021-07-14)
 #### Knowing Issues ####
 * [Forwarding] 若Auth有被Forwarding Rule使用, 應該要阻擋刪除該Auth
 * [Portal] Device copy to my org後生成的Object, 編輯該Object會無法SAVE
-* 
+
 #### [Portal] ####
 Update:
 * [Org Setting] External Blob Setting in Root Org Settings
