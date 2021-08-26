@@ -1,4 +1,43 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.006 (2021-08-26)
+#### [Portal] ####
+Bug Fix:
+* [#26223][Blob] 設定Azure blob後，按save後，沒有lock住畫面，就可操作其他功能
+* [#26215][Object] copy to my org生成的object，parameter內的最大變化率 / 分鐘 是10000
+* [#26206][DM] 上傳adam後，點列表會顯示異常
+* [#26195][Dashboard Wizard]新增空白dashboard, save後, 就一直loading
+* [#25618][Forwarding]處理Request Body格式有誤
+* [Forwarding]當authentication List是空的, 從Forwarding List切過去再切回來, Row Per Page選單會變成1
+
+Update:
+* [Object][User] object list,user list头像懒加载
+* [Parameter] 累算点最大变化量默认值改为999999999 
+ 
+#### [DataWorker] ####
+Bug Fix:
+* [#25546]ADAM/WISE設備斷線後，燈號還是綠燈
+
+#### [datapacker] ####
+Update:
+* 加大設定Azure blob的Timeout
+
+#### [Archiver] ####
+Bug Fix:
+* 存数据时没有根据 equipid 计算出 hashcode 导致当 equipid >= 128 时数组异常
+
+Updated:
+* 使用內存處理min/hour表
+* 去掉 ene_data_d_min 数据表
+* 2倍recording rate以前的tmpdata從內存中移除, 避免memory leak
+
+#### [api-org] ####
+Updated:
+* datasource datatype拿掉ACCUM
+
+#### [api-subscribe] ####
+Updated:
+* 新增支援訂閱advanced subscribe(5000 parameters)模式
+
 ## DeviceOn/BI v-1.01.005 (2021-08-17)
 #### [Portal] ####
 Bug Fix:
