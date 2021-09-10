@@ -1,4 +1,32 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.01.007 (2021-09-10)
+#### [Portal] ####
+Bug Fix:
+* [#26387] 在org內新增用戶，按取消，卻不能關閉
+* [#26359] New From Template產生的Dashboard，沒有依設定"僅顯示組織層次結構"
+
+#### [DataWorker] ####
+Update:
+* 只有recording rate > 0 才保存RAWData
+
+Bug Fix:
+* Redis connection overflow
+
+#### [DBMaster] ####
+Update:
+* Increase gorutine to 100 to handle scale data
+Bug Fix:
+* Faild to scale data of constant parameter
+* Get RAWData delete time by object ID (Cannot by device ID in 1.01 version)
+
+#### [Notification] ####
+Bug Fix:
+* Cannot display preview message with "Others" if it has space in "Others" string
+
+#### [Archiver] ####
+Update:
+* Revert version to 1.00.011
+
 ## DeviceOn/BI v-1.01.006 (2021-08-26)
 #### [Portal] ####
 Bug Fix:
