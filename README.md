@@ -1,4 +1,50 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.02.001 (2021-09-29)
+### [New Feature] ###
+#### Device Management - Application management #### 
+  * Support remote install/update/uninstall applications in UNO/TPC devices.
+  * Co-work with WISE-PaaS/APPHub services.
+  * Support Linux APP(Deb / Zip / tar.gz) & Docker APP (Docker Compose).
+  
+#### Inspection - Job Management (Previously named Issue Management) ####
+  * Arrange your job and corresponding tasks in Patrol Inspection Portal.
+  * Assign all the tasks at once after you finished the job arraangement.
+  * Support Planning Job duplication.
+  * Support PDF attachment type.
+
+#### Dashboard Datasource ####
+  * Add "Report" Function to return parameter's Max/Min/Avg/Last in Table format.  
+### [Update] ###
+#### [Portal] ####
+  * [System] Adjustment of error Message notification UI.
+  * [System] Add "Sync with Dashboard" dialog to handle the missing dashboard folder.
+  * [Organization] Display create time and creator of the organization.
+  * [Organization][Inspection Setting] QRCode of inspection URL
+  * [Organization][Inspection Setting] QRCode of inspection APP download link
+  * [Dashboard Wizard] Support General Dashboard creation (Edit/Create dashbord -> Basic Information -> Visibility).
+  * [Dashboard Wizard] Add "Object Monitor (Reset)" Panel template.
+  * [Dashboard Wizard] Add "URL" Setting in EnE Worldmap Card
+  * [Forwarding] Support MQTT+SSL
+  * [User] Expired Date of a user in an organization. (Default value = "No Limit")
+  * [User] Mark of Organization Creator and let creator cannot be deleted.
+  * [Object] New formula description UI in Calculation Parameter setting.
+
+#### [Portal Backend] ####
+  * [Fix] device configuration update may cause corresponding object's alarm disappear.
+#### [api-hub] ####
+  * [SSO] Get OrgList by SSO user's privilidge
+  * [API] Change input parameter of (POST /dbmaster/data/RawData/query)
+  * [API] Add fixed interval data API (GET /dbmaster/data/fixedScale)
+  * [API] Add get interval list API (GET /dbmaster/interval/list)
+
+#### [Archiver] ####
+  * [Update] Cache the intermidiate data in local memory to improve performance
+  * [Fix] Faild to process new "discrete" parameter
+
+#### [DataPacker] ####
+  * [Refactor] Increase the number of gorutine to handle RAW data
+
+
 ## DeviceOn/BI v-1.01.007 (2021-09-10)
 #### [Portal] ####
 Bug Fix:
