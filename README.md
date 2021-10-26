@@ -1,4 +1,41 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.02.002 (2021-10-26)
+### [Portal] ###
+Bug Fix: 
+* [#26838] 巡檢功能無法登入
+* [#26833] [Forwarding]新增MQTT+SSL ，但在rule使用這個auth，按test，卻fail
+* [#26832] [User] Expired Date of a user in an organization異常
+* [#26830] [Org] 手動新增Org, 但巡檢功能卻是啟用
+* [#26749] [User Auth] 新增v1角色，只有Viewer權限，卻可以新增dashboard
+* [#26742] [ErrorMsg] Sync with Dashboard 後無法正常編輯Dashboard
+* [Forwarding] 新增Object or parameter後, 回Forwarding頁面無法看到新增的項目
+* [Dashboard Wizard] graph panel編輯display name後按save, 出去後再edit一次, display name仍是舊的
+* [Dashboard Wizard] Panel若綁定Parameter後, 這個Parameter被刪除了, 再次編輯此Panel時會無法選擇Parameter  
+Update:
+* [Dashboard Wizard] 支援配置EnE World Map card panel的Marker Type/Map Type屬性
+* [Menu] Root Org的Dashboard分頁增加Menu子分頁配置此組織的SRPFrame
+* [Menu] 增加theme配置
+* [Device List] 優化調整 device list, 並調整為異步加載
+* [Profile/Object/Archive] Remove the recording rate options which less than 1 min
+
+### [DataSource Backend] ### 
+Bug Fix:
+* [#26735] Panel歷史資料顯示異常 (未按照TimeInterval回傳)
+
+Update:
+* Object List會顯示當前組織+子組織下的Object, Object以 "OrgName/ObjectName"顯示
+* Function "report" renamed to "reportAnalogBasic"
+* Add "reportMerged" function
+  
+### [DBMaster] ###
+Bug Fix:
+* [#26719] 透過dbmaster api去Get history calculated data，precise用month / year會出現error
+* [Fix] Blob http client沒有正確init造成拿blob資料失敗
+  
+### [DataPacker] ###
+Bug Fix:
+* [#26714] 資料庫沒有配置資料, 回傳Error給前端, 造成Save Org失敗
+
 ## DeviceOn/BI v-1.02.001 (2021-09-29)
 ### [New Feature] ###
 #### Device Management - Application management #### 
