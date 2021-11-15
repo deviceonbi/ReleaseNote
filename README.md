@@ -1,4 +1,36 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.02.003 (2021-11-15)
+### [Portal] ###
+Bug Fix:
+* [#26742] [Dashboard] Sync with Dashboard問題
+* [#26838] 前端問題造成巡檢功能無法登入
+* [#27008] [DM] 新增WISE/ADAM設備，卻沒顯示mqtt broker /port資料
+* [#27020] [Profile] 新增profile，然後save，畫面會一值在loading
+* [#27079] [Dashboard Wizard] 編輯2.1 Object Monitoring內的panel，在Alarm Status/Object status內沒顯示圖片
+* [System Setting] 修复alarm category和alarm level删除时无法点击删除和取消按钮的bug
+* [UI] 修正systemSetting和object的dialog样式并去除外层滚动条
+* [Wizard][fix] 不支援的Panel只修改該panel的title & description, 其他json不動
+* 
+Update:
+* [change] change the default number of page list to 50
+### [api-portal] ###
+* [#27103] codesys設備，上傳的tag有重覆，導致DM無法操作
+* [Fix] device datavalue 转换为number的精度丢失问题
+* [Fix] fix invite user 漏加inspection权限
+### [dbmaster] ###
+* [Fix] 如果value出現infinity字樣(不合法的json)會造成處理資料失敗
+* [Update] enhance performance to get large number of devinfo
+
+### [DataPacker] ###
+[Fix] rename blob folder path (之前全部使用TagName, 造成Min以上資料讀取不到, Min以上需使用Parameter Name)
+
+### [DataWorker] ###
+[Fix] 设备上传 data 消息，以及设备上线/离线时，没有更新内存中 TagInfo 的 quality.
+[Fix] 如果设备上线后这个点没有再传数据, 则不给补数据
+
+### [Datasource Backend] ###
+[Update] his data 取消上下线补null，改为按datasource plugin配置是否标记异常而多返回异常信息
+
 ## DeviceOn/BI v-1.02.002 (2021-10-26)
 ### [Portal] ###
 Bug Fix: 
