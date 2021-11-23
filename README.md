@@ -1,4 +1,22 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.02.004 (2021-11-26)
+### [Portal] ###
+Bug Fix:
+* [MyDevice] Loading does not hide when there is no devices.
+* [MyDevice] 修复tagList中status类型点value没有显示online/offline的问题
+* [Object] parameter删除框英文单词不截断
+Update:
+* [Menu] User who have root-org. admin/Engieer permission can create/update/delete Menu in sub-orgs.
+### [DataWorker] ###
+* [Fix] Wrong JSON format ('infinity' value) for Archiver
+* [Fix] Didn't release Redis CachedMap may cause data lost.
+### [DataEvaluator] ###
+* [Fix] Produce 'infinity' value without single quote in JSON Format
+### [DataArchiver] ###
+* [Fix] Some parameters have min data only, not have hour data.
+### [Job Executor] ###
+* [Inspection] 新增組織時, 沒有預設將Org owner加入inspection帳號權限
+
 ## DeviceOn/BI v-1.02.003 (2021-11-15)
 ### [Portal] ###
 Bug Fix:
