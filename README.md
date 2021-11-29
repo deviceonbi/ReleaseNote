@@ -1,4 +1,18 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.02.005 (2021-11-29)
+### [Portal] ###
+* [#27292] add object from device error
+### [DataArchiver] ###
+* [Fix] Wrong Min data calculation for discrete parameter
+
+### [Datasource backend] ###
+* [Update] groupStatusOccurrenceTable，groupStatusDurationTable，groupStatusAlarmOccurrence function
+* [Update] display name support multiple variable (@tagname / @desc / @unit) combination. Ex. "@tagname (@unit)"
+* [Update] ringratio function support new table / timeserie format
+
+### [DBMaster] ###
+* [Fix] Calculation function return null value while source data has bad quality.
+
 ## DeviceOn/BI v-1.02.004 (2021-11-26)
 ### [Portal] ###
 Bug Fix:
