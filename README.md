@@ -1,5 +1,5 @@
 # DeviceOn/BI Release Note
-## DeviceOn/BI v-1.02.005 (2021-11-29)
+## DeviceOn/BI v-1.02.005 (2021-11-30)
 ### [Portal] ###
 * [#27292] add object from device error
 ### [DataArchiver] ###
