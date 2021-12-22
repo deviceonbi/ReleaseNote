@@ -1,4 +1,52 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.03.001 (2021-12-22)
+### [New Feature] ###
+#### Portal UI ####
+* [Login] New login page with tabs to login to Dashboard or DeviceOn/BI Portal
+* [UI] New header UI / New Quick start description(Settings -> Help -> Quick Start)
+* [User Management] Support startup dashboard page setting ("User Management" -> Edit -> "Set startup dashboard page")
+* [Menu] Support Marquee and Alarm setting.
+
+#### My Devices (Device Management) ####
+* [Repository] Allow user to use their own APP Repository for Application OTA (Need to purchase your own IoTSuite-AppHub first in Advantech WISE-MarketPlace)
+  1. Add a Repo. in "Repository" tab.
+  2. While using Application OTA function (in Applications tab -> Actions -> click "Application"), switch to Repository tab, change "Source" dropdown options to your newly created Repository.
+
+### [Update] ###
+#### Portal UI ####
+* [Update][Menu Dialog][Select dashboard URL dialog] UI adjustment
+* [Update] Highlignt item of device list / forwarding page 
+
+#### Alarm Service ####
+* [Update] New /alarm/rt/num API for RT alarm count
+* [Update] New /alarm/rt/desclist API for Dashboard marquee
+#### Datasource Backend ####
+* [Update] YoYTrend function supports "Hour" (compare with same hour yesterday)
+* [Update] new return fields of Alarmlog_record function 
+  * almoccurrence: Alarm Occurrence Of This Month
+  * almvalue: Current Value
+  * equipparam: Parameter Name
+#### Dashboard Plugin / Panels ####
+* [Update][datasource plugin] New mark alarm functionality which can show alarm info on Trend chart (Need to use Group Bar chart panel to show it)
+
+### [Fix] ###
+#### Portal UI ####
+* [#27490] Last Query Time / Last Successful Time will change while refresh page
+* [#27553][Wizard][World Map][fix] Missing targets while New from existing
+* [#27379][MyDevices] Wrong UI display
+* [Org Setting] After disable Inspection, cannot enable it again.
+* [Archiving] Fail to get Objects' icon
+#### DBMaster ####
+* [Fix] Wrong cacheUnit that will cause data always not cached in.
+* [Fix] Always get blob data even if it still in DB
+#### Archiver ####
+* [Fix] Wrong init analog data
+#### DataWorker ####
+* [#26263] Didn't mark offline quality while the Device offline
+#### Dashboard Plugin / Panels ####
+* [Fix][EnE WorldMap] Kept Card Info in Panel json which will cause slow load speed
+
+
 ## DeviceOn/BI v-1.02.005 (2021-11-30)
 ### [Portal] ###
 * [#27292] add object from device error
