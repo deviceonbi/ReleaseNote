@@ -1,4 +1,11 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.03.002 (2021-12-28)
+
+### [Fix] ###
+#### DataWorker ####
+- [#27600] Wrong tag count of devices
+- [#27601] No historical data while recording rate had been set
+
 ## DeviceOn/BI v-1.03.001 (2021-12-22)
 ### [New Feature] ###
 #### Portal UI ####
