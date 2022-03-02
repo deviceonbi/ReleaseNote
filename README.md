@@ -1,4 +1,10 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.03.005 (2022-02-22)
+### [Fix] ###
+- [#27888][Portal] Cannot display alarm group after create it.
+- [#27921][Portal] Translation error
+- [#27936][Evaluator] Calculation parameter's calculation result failed.
+- [#27949][DashboardWizard] Some panels from template cannot display value properly
 ## DeviceOn/BI v-1.03.003 (2022-01-15)
 ### [Fix] ###
 - [#27675][Worker] Cannot display RT data of constant parameter
