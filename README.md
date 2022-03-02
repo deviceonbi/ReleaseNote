@@ -1,4 +1,15 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.03.006 (2022-03-03)
+### [Fix] ###
+- [#28106][Datasource] Multi-language dropdown issue
+- [#28120][#28122][Archiver] Bad MIN / MAX value of cumulative parameter (TimeInterval = recording rate)
+- [#28109][Evaluator] Calculation parameter's calculation result failed.
+- [#28121][Archiver] Missing Day/Month/Year data of discrete parameter
+- [#28123][Datasource] While no HIS data of Constant / Text parameter within query time range, panel will get a null data.
+- [#28125][Archiver] Bad Hour data (AVG) of Current parameter.
+### [Update] ###
+- [Panel][ene-report-panel] Support reportMerged function of datasource.
+-   
 ## DeviceOn/BI v-1.03.005 (2022-02-22)
 ### [Fix] ###
 - [#27888][Portal] Cannot display alarm group after create it.
