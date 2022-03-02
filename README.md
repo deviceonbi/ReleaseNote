@@ -1,6 +1,14 @@
 # DeviceOn/BI Release Note
+## DeviceOn/BI v-1.03.003 (2022-01-15)
+### [Fix] ###
+- [#27675][Worker] Cannot display RT data of constant parameter
+- [#27676][Portal] UI Typo error
+- [#27677][Evaluator] Calculation parameter no data
+- [#27678][Portal] [Menu] malfunction of Marquee and Alarm setting 
+- [#27716][datasource] YoYTrend function failed while cross day inquiry
+- [#27723][datasource] Trending data with "Mark Alarm" function will display failed on group bar chart.
+- [#27733][Portal] Notification page forever loading 
 ## DeviceOn/BI v-1.03.002 (2021-12-28)
-
 ### [Fix] ###
 #### DataWorker ####
 - [#27600] Wrong tag count of devices
