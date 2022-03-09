@@ -9,7 +9,7 @@
 - [#28125][Archiver] Bad Hour data (AVG) of Current parameter.
 ### [Update] ###
 - [Panel][ene-report-panel] Support reportMerged function of datasource.
--   
+
 ## DeviceOn/BI v-1.03.005 (2022-02-22)
 ### [Fix] ###
 - [#27888][Portal] Cannot display alarm group after create it.
