@@ -1,5 +1,35 @@
 # DeviceOn/BI Release Note
 
+## DeviceOn/BI v-1.04.002 (2022-07-11)
+
+### [Fix]
+
+- [29487][Packer] Fix timeout issue
+- [29484][Portal] While create object from profile, portal did not apply the RecordingType & Max change/min to object properly.
+- [29482][Portal] Negative mode of Profile should be hided.
+- [29480][Portal] Alarm setting will disappear after set the recording rate from Archiving function.
+- [29411][Plugin] The interval between last query time and last success time didn't match the query frequency.
+- [29410][Portal] Got error message while delete a dashboard from dashboard list.
+- [Inspection][Backend] The order of items in inspection report did not follow the same order of inspection route.
+- [Inspection][Frontend] Job description will be hided if the message is too long.
+- [Inspection][Backend] While add a station or a equipment, name cannot be repeated in the same level of tree.
+- [Inspection][Backend] Inspection history cannot display the inspection item which has not started.
+- [Inspection][Backend] Cannot delete Area even all the equipments within that area have been deleted.
+- [Inspection][Backend] Adjust the email content for new user.
+- [Inspection][Backend] Order the Inspection history by datetime (desc)
+- [Inspection][Backend] If attachment upload is failed, reset the inspection result to on-going state.
+- [Job Executor] Fail to upgrade inspection.
+- [Job Executor] blob secret is not bound in on-premise environment.
+- [Archiver] while calculating the recording rate data, if the quality of RAWData is not equal to 0, archiver should skip it and use the previous data which the quality = 0 to calculate.
+
+### [Update]
+
+- [alarm] API support CORS for all endpoint.
+
+- [datasource backend] Add "groupBasicInfo" function.
+  - User can use this function to display group's default parameters value, such as addr, postcode... on a row of table.
+  - Use this function together with selecting multiple parameters on "ObjectParam" for displaying the info that you want.  
+
 ## DeviceOn/BI v-1.04.001 (2022-06-06)
 
 ### [New Feature]
@@ -17,6 +47,14 @@
   - Normal mode: If (data N - data N-1) less than zero, then treat the result as zero
   - Negative mode: Allow the result of (data N - data N-1) less than zero.
 
+#### System log feature on Dashboard for system diagnostic
+
+- Add new dashboard panel - Ene Event Log Panel
+- Add new datasource function:
+  - DeviceLog - logs of device online / offline / setValue
+  - SysOperationLog - logs of GET/ADD/Update/Delete organization or object or parameter
+  - SystemLog - logs of user Login / Logout
+
 ### [Update]
 
 #### Alarm
@@ -30,7 +68,7 @@
 - [Bug] Device online / offline information error.
 - [Bug] issue of RAW data collection index.
 - [Bug] Did not count the system tag into Device total tag count.
-- [Bug] No data padding for constant parameter. 
+- [Bug] No data padding for constant parameter.
 
 #### api-portal
 
