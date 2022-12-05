@@ -1,5 +1,100 @@
 # DeviceOn/BI Release Note
 
+## DeviceOn/BI v-1.05.003 (2022-12-01)
+
+### [New Feature]
+#### Datasource functions
+- Transformation
+  - Support simple transformation of query data, includes RT/HIS/HIS_AVG/HIS_MIN/HIS_MAX. Currently support basic arithmetical operation of +,-,*,/,().
+- reportMonthBasic
+  - Report monthly data of multiple parameters in table format.
+- PassRate
+  - Return monthly or yearly pass rate. The date of month or year is based on the query end time.  
+- PassRateTrend
+  - Return daily pass rate of a month. The date of month is based on the query end time.
+- inspectionAreaStats
+  - Return inspection statistics of area, includes "Total Hours", "Total Times", "Total Complete", "Commit Complete", "Commit Redo", and "Commit End".
+- inspectionStationStats
+  - Return inspection issue statistics of station, includes "Total Times", "Schedule Abnormal", and "Accidental Abnormal"
+- inspectionHistory
+  - Return inspection history in table format.
+- alarmOccurrence
+  - Return the RT or HIS alarm occurrence of an object or group(and its sub groups) within query start time to end time.
+- alarmOccurrenceMonth
+  - Return daily HIS alarm occurrence of an object or group(and its sub groups) of a month. The date of month is based on the query end time.
+- alarmStatusNum
+  - Return the number of each RT alarm status.
+
+#### Dataworker
+- Allow the device to upload data with future datatime. (For PHM usage)
+- Allow the device to upload device tag name with nested device name.
+
+#### SQL Handler (Used in iWater project only)
+- Support to read the MSSQL table data and write the data into daily or monthly data of parameters.
+- Currently support only one MSSQL table schema of iWater project.
+- User can define objects with "DBSource" objectType, define the connection info of db in constant parameters, and define the required field in constant parameter.
+- SQL Handler can update daily or monthly data right after the table has been updated.
+- SQL Handler can call calculation API to update the calculation data right after the table has been updated if the calculation parameter use the db source in its formula.
+
+#### Calculation API (Used in iWater project only)
+- Allow SQL Handler to query an one time calculation result of the calculation parameters which use the db source in its formula.
+- The calculation frequency of these calculation parameter need to be set as a negative value to mark it as a special parameter (not trigger the calculation by time).
+
+### [Update]
+#### System Arch
+- [Device] Refactor the device Tag information from massive input into Redis.
+
+#### Caclulation formula
+- [getGroupParamSum] getGroupParamSum formula in calculation parameter support additional "DefaultValue" field.
+  - example: getGroupParamSum("Param001", 0) means if any "Param001" with bad value, replace it with 0.
+  
+#### Profile
+- Support negative mode in Profile Management
+
+#### Alarm
+- [Record] Complete record of alarm level changes, including level up and down.
+
+#### Dashboard Datasource
+- [TimeInterval] TimeInterval support "Original" mode to query the original historical data from database.
+  - Max number of data for one query are limited at 3000
+  - The historical data includes RAWData/Recording Rate/Hour/Day/Month/Year.
+
+#### Inspection
+- [Inspection History] 
+  - Support iframe
+  - Default query data of last 7 days
+  - URL QueryString support:
+    - theme=dark (dark mode)
+    - index=0 (area index)
+    - lastNDay=n (get data of last n days)
+    - rStrEn=xxx (Replace the wording of "Inspection" into xxx)
+- [Task Management]
+  - Add a "Failed" tab for those tasks which no pass the review.
+  - Support iframe
+  - Default query data of last 7 days
+  - URL QueryString support:
+    - theme=dark (dark mode)
+    - index=0 (area index)
+    - lastNDay=n (get data of last n days)
+    - rStrEn=xxx (Replace the wording of "Inspection" into xxx)
+### [Fix]
+#### Inspection App
+- [Fix] Click the "download inspection" icon, but no loading status shown.
+- [Fix] Change upload time format to 24h format.
+- [Fix] Upload inspection result failed but no alert.
+#### Alarm
+- [API] Sort RT alarm by time (descending order)
+
+#### Archiver
+- [Fix] Calculate the archived data with bad data value of online / offline data.
+- [Fix] Offline -> Online, the hour data before offline will become infinity.
+- [Fix] Handle the tmpdata delay above one hour.
+- [Fix] If the data no change for a long time, while next change occur, it may be judged as an invalid value (above the value of max change per minute.)
+- [Fix] Restore cumulative data with the function of current data.
+- [Fix] No restore data in DCG environment.
+
+#### api-subscribe
+- [Fix] Disable an organization with disabled inspection will cause app crash.
 ## DeviceOn/BI v-1.04.002 (2022-07-11)
 
 ### [Fix]
