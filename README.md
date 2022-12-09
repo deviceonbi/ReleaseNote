@@ -25,10 +25,14 @@
 - alarmStatusNum
   - Return the number of each RT alarm status.
 
-#### Dataworker
+#### Device
 - Allow the device to upload data with future datatime. (For PHM usage)
 - Allow the device to upload device tag name with nested device name.
 
+#### Calculation formula
+- TimeMatch(CycleType, TriggerTime, TimeZone) : Check if the calculation time match the input condition. If match return 1, otherwise return 0.
+  - Example: TimeMatch('everyday','0s','+0800') means “00:00:00 of everyday return 1, otherwise return 0”.
+  - Example: Together with if(x,y,z) formula: if ( TimeMatch('everyday','0s','+0800'), 0, A+1) means “Reset the value to 0 on 00:00:00 of everyday, otherwise A+1”
 #### SQL Handler (Used in iWater project only)
 - Support to read the MSSQL table data and write the data into daily or monthly data of parameters.
 - Currently support only one MSSQL table schema of iWater project.
@@ -95,6 +99,10 @@
 
 #### api-subscribe
 - [Fix] Disable an organization with disabled inspection will cause app crash.
+
+#### Dashboard datasource
+- [Fix] Select multiple objects and same parameter name, but the dashboard cannot display multiple RT data.
+
 ## DeviceOn/BI v-1.04.002 (2022-07-11)
 
 ### [Fix]
