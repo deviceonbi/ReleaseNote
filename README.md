@@ -1,5 +1,54 @@
 # DeviceOn/BI Release Note
 
+## DeviceOn/BI v-1.05.004 (2023-01-07)
+### [New Feature]
+#### Datasource functions
+- FailRate
+  - Return the fail rate of the query time range. (query time range is set on Dashboard)  
+- FailRateTrend
+  - Return daily fail rate of the query time range. (query time range is set on Dashboard)
+### [Update]
+#### Datasource functions
+- [Function] Update the definition of the following functions:
+  - PassRate
+    - Return the pass rate of the query time range. (query time range is set on Dashboard)
+  - PassRateTrend
+    - Return daily pass rate of the query time range. (query time range is set on Dashboard)
+- [Function] Allow progress-bar-panel to use functions
+- [Function] alarmlog_record support displaying the Alarm statistic number which filtered by Org/Object/Parameter
+
+#### Archiver
+- [Restore] Refine the logic of data restore.
+
+#### DataWorker
+- [System] Improve redis access efficiency
+- [Tag] Record the initial value of Constant / Calculation Parameter
+
+#### SQL Handler
+- [Parameter] Save discrete parameter data into discreterecording collection
+- [Parameter] Support import cumulative data
+- [Parameter] Check the calculate result quality, and if quality is bad, save NaN to Mongo
+ 
+### [Fix]
+#### Archiver
+- [Bug] Got wrong restore data time
+- [Bug] Use 0 as the default value while cannot get the last value from restore data, which may cause wrong data restore.
+
+#### Evaluator
+- [Bug] Wrong process of ' symbol in "TimeMatch" function
+- [Bug] Wrong quality while SQL Handler call EvaluateTag API
+   
+#### DataWorker
+- [Bug] Cannot display correct value of #MSYS_EdgeStatus (Device online bug status show offline)
+ 
+#### DBMaster
+- [Bug] original rawdata not completed.
+- [Bug] Return WebAccess/Edgelink discrete state descriptor with wrong JSON format (will cause UI cannot display tag list)
+
+#### Alarm
+- [Bug] Alarm statistic number (Open, ACK'ed,...) no filter by org / object / parameter (always display the org level)
+- [Bug] Alarm list not order by time
+  
 ## DeviceOn/BI v-1.05.003 (2022-12-01)
 
 ### [New Feature]
